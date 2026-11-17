@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Larsen &amp; Waagan – karosseri og lakk på Tynset</title>
+<meta name="description" content="Karosseri, lakk, bilglass, leiebil og bilberging på Tynset. Send skadeanslag med bilder, regnummer og forsikringsselskap.">
+<meta name="theme-color" content="#222629">
+<link rel="preload" as="image" href="hero.jpg">
+<style>
+@font-face{font-family:'Saira Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/saira-condensed-latin-600-normal.woff2) format('woff2');}
+@font-face{font-family:'Saira Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/saira-condensed-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:'Saira Condensed';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/saira-condensed-latin-800-normal.woff2) format('woff2');}
+@font-face{font-family:'Saira';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/saira-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'Saira';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/saira-latin-500-normal.woff2) format('woff2');}
+@font-face{font-family:'Saira';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/saira-latin-700-normal.woff2) format('woff2');}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);line-height:1.08;margin:0}
+h2{font-size:clamp(1.75rem,3.2vw,2.5rem);margin-bottom:.6rem}
+h3{font-size:1.15rem;line-height:1.25}
+p{margin:0 0 1rem}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:99}
+.skip:focus{left:.5rem;top:.5rem}
+:focus-visible{outline:3px solid var(--focus,var(--acc));outline-offset:2px}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1.5rem;padding:.7rem 1.25rem;background:var(--top-bg,var(--bg));border-bottom:1px solid var(--line)}
+.brand{text-decoration:none;padding:.75rem 0;font-family:var(--head);font-weight:700;font-size:1.15rem;line-height:1.1;margin-right:auto;color:var(--top-ink,var(--ink))}
+.nav{display:flex;gap:1.25rem}
+.nav a{text-decoration:none;color:var(--top-ink,var(--ink));font-size:.95rem}
+.nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.top-call{text-decoration:none;font-weight:700;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;gap:.3rem;background:var(--acc);color:var(--acc-ink);padding:.55rem .9rem;border-radius:var(--r-btn,6px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.25rem;border-radius:var(--r-btn,6px);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;text-align:center}
+.btn-main{background:var(--acc);color:var(--acc-ink)}
+.btn-line{border-color:currentColor;color:inherit;background:transparent}
+.btn-send{background:var(--send,var(--ink));color:var(--send-ink,#fff)}
+.btn-ghost{background:transparent;border-color:var(--line-strong,var(--ink));color:var(--ink)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.services{padding:4.5rem 0 3.5rem}
+.section-lede{max-width:60ch;color:var(--ink2)}
+.svc{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 2.5rem}
+.svc li{padding:1.1rem 0 1.2rem;border-top:1px solid var(--line)}
+.svc p{margin:.35rem 0 0;color:var(--ink2);max-width:46ch}
+.request{padding:4rem 0;background:var(--req-bg,var(--surface));color:var(--req-ink,var(--ink))}
+.req-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:3rem;align-items:start}
+.req-head p{max-width:46ch}
+.req-head{position:sticky;top:6rem}
+.tips{margin-top:1.5rem;padding:1.1rem 1.2rem;background:var(--tips-bg,rgba(255,255,255,.6));border-left:4px solid var(--acc)}
+.tips h3{font-size:1rem;margin-bottom:.4rem}
+.tips ol{margin:0;padding-left:1.2rem}
+.req-form{background:var(--form-bg,#fff);color:var(--ink);padding:1.5rem;border-radius:var(--r-box,10px);border:1px solid var(--line)}
+.field{border:0;margin:0 0 1.15rem;padding:0;min-width:0}
+.field>label,.field legend{display:block;font-weight:700;margin-bottom:.4rem;padding:0}
+.hint{display:block;font-size:.9rem;color:var(--ink2);margin:-.2rem 0 .45rem}
+.req{color:var(--req-star,#b42318)}
+input[type=text],input[type=tel],input[type=email],input[type=number],textarea{width:100%;font:inherit;padding:.7rem .8rem;border:1.5px solid var(--field-line,#9aa5ad);border-radius:6px;background:#fff;color:var(--ink);min-height:48px}
+textarea{resize:vertical;min-height:110px}
+.field.invalid input,.field.invalid textarea{border-color:#b42318;background:#fff5f4}
+.field.invalid legend,.field.invalid>label{color:#b42318}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:.5rem .9rem;border:1.5px solid var(--field-line,#9aa5ad);border-radius:var(--r-chip,999px);background:#fff;cursor:pointer;line-height:1.2}
+.chip input:checked+span{background:var(--chip-on,var(--ink));border-color:var(--chip-on,var(--ink));color:var(--chip-on-ink,#fff)}
+.chip input:focus-visible+span{outline:3px solid var(--focus,var(--acc));outline-offset:2px}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-weight:700;cursor:pointer}
+.check input{width:22px;height:22px;margin-top:.1rem;flex:none;accent-color:var(--ink)}
+.alert{margin:-.3rem 0 1.2rem;padding:.9rem 1rem;border-radius:6px;background:#fff4d6;border:1.5px solid #d99a00;color:#3d2b00}
+.alert p{margin:0}
+.alert a{font-weight:700}
+.tabs{display:flex;gap:.4rem;margin-bottom:1.25rem;border-bottom:2px solid var(--line)}
+.tabs button{font:inherit;font-weight:700;padding:.7rem 1rem;min-height:48px;border:0;background:transparent;color:var(--ink2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--acc-strong,var(--acc))}
+.panel-intro{color:var(--ink2)}
+.out{margin-top:1.5rem;border-top:1px solid var(--line);padding-top:1.25rem}
+.out-h{font-weight:700;margin-bottom:.5rem}
+.preview{white-space:pre-wrap;word-break:break-word;font-family:var(--body);font-size:.95rem;background:var(--pre-bg,#f3f5f6);padding:1rem;border-radius:6px;margin:0 0 1rem;max-height:340px;overflow:auto}
+.errors{color:#b42318;font-weight:700}
+.send{display:flex;flex-wrap:wrap;gap:.6rem}
+.send .btn{flex:1 1 200px}
+.send-hint{font-size:.92rem;color:var(--ink2);margin:.75rem 0 .25rem}
+.alt-link{font-size:.95rem}
+.status{font-weight:700;min-height:1.2em;margin:0}
+.noscript{padding:1rem;background:#fff4d6}
+.contact{padding:4rem 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.contact-list p,.contact-list li{margin:0 0 .6rem}
+.contact-list span{display:inline-block;min-width:8.5rem;color:var(--ink2)}
+.contact-list a{font-weight:700;overflow-wrap:anywhere}
+.phones{list-style:none;padding:0;margin:0 0 .6rem}
+.contact-lede{max-width:44ch;color:var(--ink2)}
+.foot{padding:2rem 0 2.5rem;border-top:1px solid var(--line);font-size:.95rem;color:var(--ink2)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
+.foot p{margin:0}
+.callbar{display:none}
+@media (max-width:860px){
+  .nav{display:none}
+  .req-grid,.contact-grid{grid-template-columns:1fr;gap:1.5rem}
+  .req-head{position:static}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:.5rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--bar-bg,var(--ink));transition:transform .2s ease}
+  .callbar.away{transform:translateY(110%);visibility:hidden}
+  .callbar a{flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:var(--r-btn,6px);font-weight:700;text-decoration:none}
+  .cb-call{background:var(--acc);color:var(--acc-ink)}
+  .cb-req{border:2px solid rgba(255,255,255,.7);color:#fff}
+  body{padding-bottom:4.5rem}
+  .top-call-l{display:none}
+}
+@media (max-width:420px){
+  .top{gap:.6rem;padding:.6rem .9rem}
+  .brand{font-size:1rem}
+  .top-call{padding:.5rem .65rem;font-size:.95rem}
+  .req-form{padding:1.1rem}
+  .contact-list span{display:block;min-width:0}
+}
+
+
+:root{--bg:#eceeef;--surface:#26292c;--ink:#222629;--ink2:#555d63;--acc:#b01e24;--acc-ink:#fff;--line:#c9ced1;--head:'Saira Condensed',sans-serif;--body:'Saira',sans-serif;--send:#b01e24;--chip-on:#222629;--r-btn:2px;--r-box:2px;--req-bg:#26292c;--req-ink:#f1f2f3;--tips-bg:#33373b;--bar-bg:#222629;--top-bg:#fff}
+.brand{font-size:1.4rem;font-weight:800;text-transform:none}
+.hero-poster{padding:3.5rem 0 4rem;background:#fff;border-bottom:1px solid var(--line)}
+.poster-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(3rem,7.5vw,6.4rem);font-weight:800;line-height:.9;letter-spacing:-.01em}
+.lede{font-size:1.15rem;margin-top:1.25rem;color:var(--ink2);max-width:40ch}
+.poster-img img{width:100%;aspect-ratio:3/2;object-fit:cover;border-bottom:6px solid #b01e24}
+.facts{list-style:none;padding:0;margin:1.75rem 0 0;display:grid;gap:.4rem}
+.facts strong{font-family:var(--head);font-size:1.1rem;margin-right:.4rem}
+.facts a{font-weight:700;color:#b01e24}
+.svc h3{font-size:1.4rem;font-weight:700}
+.req-head h2,.req-head p,.req-head li{color:#f1f2f3}
+.tips{border-left-color:#b01e24}
+.tips h3{color:#fff}
+.berging{margin-top:1.5rem;padding:1rem 1.2rem;border:2px solid #b01e24}
+.berging h3{color:#fff;margin-bottom:.3rem}
+.berging p{margin:0;color:#f1f2f3}.berging a{color:#fff;font-weight:700}
+.gallery{padding:0 0 4rem}
+.g-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.g-grid figure{margin:0}.g-grid img{width:100%;aspect-ratio:16/10;object-fit:cover}
+@media (max-width:860px){.poster-grid{grid-template-columns:1fr;gap:1.5rem}.poster-img{order:-1}.hero-poster{padding:1.25rem 0 2.5rem}}
+
+</style>
+</head>
+<body class="v-poster">
+<a class="skip" href="#forespørsel">Send forespørsel</a>
+<header class="top">
+  <a class="brand" href="#">Larsen &amp; Waagan</a>
+  <nav class="nav" aria-label="Meny"><a href="#tjenester">Tjenester</a><a href="#forespørsel">Forespørsel</a><a href="#kontakt">Kontakt</a></nav>
+  <a class="top-call" href="tel:+4762480504"><span class="top-call-l">Ring</span> 62 48 05 04</a>
+</header>
+<main>
+<section class="hero hero-poster">
+  <div class="wrap poster-grid">
+    <div class="poster-text"><h1>Karosseri og lakk på Tynset</h1><p class="lede">Bulk, ripe eller steinsprut? Send oss skaden med bilder, regnummer og forsikringsselskap, så har vi sett på den før du kommer innom.</p><div class="hero-cta"><a class="btn btn-main" href="#forespørsel">Send skadeanslag</a><a class="btn btn-line" href="tel:+4762480504">Ring 62 48 05 04</a></div><ul class="facts"><li><strong>Verkstedet</strong> mandag–fredag 07.30–16.00</li><li><strong>Bilberging døgnet rundt</strong> <a href="tel:+4790025667">900 25 667</a></li></ul></div>
+    <div class="poster-img"><img src="hero.jpg" width="1024" height="683" alt="Bil maskert og klar for lakkering i lakkboksen" class="" decoding="async"></div>
+  </div>
+</section>
+<section class="services" id="tjenester" aria-labelledby="svc-h">
+  <div class="wrap">
+    <h2 id="svc-h">Hele jobben på ett sted</h2>
+    <p class=section-lede>Tynsets eldste karosseri- og lakkverksted. Vi er et autorisert verksted og har avtaler med de største forsikringsselskapene.</p>
+    <ul class="svc"><li><h3>Oppretting</h3><p>Taksering på stedet, hjelp med forsikringspapirene og rask reparasjon med Celette rettejigg.</p></li><li><h3>Lakkering</h3><p>Alle bilmerker og alle typer plast. Vi lakkerer også kjøkkenfronter og møbler.</p></li><li><h3>Bilglass</h3><p>Reparasjon av steinsprut og bytte av frontrute. Steinsprut dekkes som regel av kasko eller delkasko uten egenandel.</p></li><li><h3>Leiebil</h3><p>Leiebil mens bilen står hos oss. Ved kaskoskade dekker forsikringen den som regel.</p></li><li><h3>Bilberging</h3><p>Planberger og berging døgnet rundt på 900 25 667.</p></li><li><h3>Verksted og sveising</h3><p>Vanlig verkstedarbeid på alle bilmerker, og sveising i stål, rustfritt og aluminium.</p></li></ul>
+  </div>
+</section>
+<section class="gallery" aria-label="Bilder"><div class="wrap g-grid g-2"><figure><img src="polering.jpg" width="1100" height="729" alt="Polering av lakk etter reparasjon" class="" loading="lazy" decoding="async"></figure><figure><img src="vei.jpg" width="1100" height="733" alt="Snødekt skogsvei en vinterdag" class="" loading="lazy" decoding="async"></figure></div></section>
+<section class="request" id="forespørsel" aria-labelledby="req-h">
+  <div class="wrap req-grid">
+    <div class="req-head">
+      <h2 id="req-h">Send skadeanslag</h2>
+      <p>Fyll ut skjemaet, så åpnes en ferdig skrevet e-post til verkstedet. Legg ved bildene i e-posten før du sender, så ser vi på skaden og tar kontakt.</p>
+      <div class="tips"><h3>Bilder som hjelper oss</h3><ol><li>Hele bilen skrått forfra, så vi ser hvilken bil det er.</li><li>Skaden på nært hold.</li><li>Skaden fra et par meters avstand.</li><li>Kilometerstanden, hvis det er en forsikringssak.</li></ol></div>
+      <div class="berging"><h3>Står bilen?</h3><p>Ring vakttelefonen <a href="tel:+4790025667">900 25 667</a>. Vi henter bilen med planbergeren, døgnet rundt.</p></div>
+    </div>
+    <form id="req" class="req-form" novalidate>
+      
+      <div class="panel" data-panel="p1"><fieldset class="field chips-field" data-name="skade"><legend>Hva har skjedd? <span class="req" aria-hidden="true">*</span></legend><div class="chips"><label class="chip"><input type="radio" name="skade" value="Bulk eller ripe"><span>Bulk eller ripe</span></label><label class="chip"><input type="radio" name="skade" value="Kollisjon"><span>Kollisjon</span></label><label class="chip"><input type="radio" name="skade" value="Steinsprut eller sprekk i ruten"><span>Steinsprut eller sprekk i ruten</span></label><label class="chip"><input type="radio" name="skade" value="Rust eller sveising"><span>Rust eller sveising</span></label><label class="chip"><input type="radio" name="skade" value="Lakkering av noe annet enn bil"><span>Lakkering av noe annet enn bil</span></label></div></fieldset><div class="field" data-name="regnr"><label for="p1-regnr">Registreringsnummer <span class="req" aria-hidden="true">*</span></label><input id="p1-regnr" type="text" name="regnr" maxlength="8" autocomplete="off" style="text-transform:uppercase" placeholder="AB 12345"></div><div class="field" data-name="bil"><label for="p1-bil">Bilmerke og modell</label><input id="p1-bil" type="text" name="bil" maxlength="60" placeholder="For eksempel Toyota RAV4"></div><fieldset class="field chips-field" data-name="forsikring"><legend>Forsikringsselskap</legend><div class="chips"><label class="chip"><input type="radio" name="forsikring" value="Gjensidige"><span>Gjensidige</span></label><label class="chip"><input type="radio" name="forsikring" value="If"><span>If</span></label><label class="chip"><input type="radio" name="forsikring" value="Tryg"><span>Tryg</span></label><label class="chip"><input type="radio" name="forsikring" value="Fremtind"><span>Fremtind</span></label><label class="chip"><input type="radio" name="forsikring" value="Frende"><span>Frende</span></label><label class="chip"><input type="radio" name="forsikring" value="Eika"><span>Eika</span></label><label class="chip"><input type="radio" name="forsikring" value="Storebrand"><span>Storebrand</span></label><label class="chip"><input type="radio" name="forsikring" value="Annet"><span>Annet</span></label><label class="chip"><input type="radio" name="forsikring" value="Betaler selv"><span>Betaler selv</span></label></div></fieldset><div class="field" data-name="skadenr"><label for="p1-skadenr">Skadenummer</label><span class="hint">Hvis du allerede har meldt skaden til forsikringsselskapet.</span><input id="p1-skadenr" type="text" name="skadenr" maxlength="30" placeholder=""></div><fieldset class="field chips-field" data-name="leiebil"><legend>Trenger du leiebil mens bilen står hos oss?</legend><div class="chips"><label class="chip"><input type="radio" name="leiebil" value="Ja"><span>Ja</span></label><label class="chip"><input type="radio" name="leiebil" value="Nei"><span>Nei</span></label><label class="chip"><input type="radio" name="leiebil" value="Vet ikke"><span>Vet ikke</span></label></div></fieldset><fieldset class="field chips-field" data-name="kjorbar"><legend>Kan bilen kjøres?</legend><div class="chips"><label class="chip"><input type="radio" name="kjorbar" value="Ja"><span>Ja</span></label><label class="chip"><input type="radio" name="kjorbar" value="Nei"><span>Nei</span></label></div></fieldset><div class="alert" id="a-berg" role="status" hidden><p>Ring vakttelefonen <a href="tel:+4790025667">900 25 667</a>, så henter vi bilen. Vi berger døgnet rundt.</p></div><div class="field" data-name="beskrivelse"><label for="p1-beskrivelse">Beskriv skaden</label><textarea id="p1-beskrivelse" name="beskrivelse" rows="4" maxlength="800" placeholder="For eksempel: bulk i bakdøra på høyre side etter et parkeringsuhell."></textarea></div><div class="field" data-name="navn"><label for="p1-navn">Navn <span class="req" aria-hidden="true">*</span></label><input id="p1-navn" type="text" name="navn" maxlength="60" autocomplete="name" placeholder=""></div><div class="field" data-name="telefon"><label for="p1-telefon">Telefon <span class="req" aria-hidden="true">*</span></label><input id="p1-telefon" type="tel" name="telefon" maxlength="20" autocomplete="tel" inputmode="tel" placeholder=""></div><div class="field" data-name="epost"><label for="p1-epost">E-post</label><input id="p1-epost" type="email" name="epost" maxlength="80" autocomplete="email" placeholder=""></div></div>
+      <div class="out">
+        <p class="out-h">Slik blir meldingen</p>
+        <pre id="preview" class="preview" aria-live="polite"></pre>
+        <p id="errors" class="errors" role="alert" hidden></p>
+        <div class="send">
+          <a id="send-primary" class="btn btn-send" href="mailto:post@biloppretteren.no">Send som e-post</a>
+          <button type="button" id="copy" class="btn btn-ghost">Kopier teksten</button>
+        </div>
+        <p class="send-hint" id="send-hint"></p>
+        <p><a id="send-secondary" class="alt-link" href="#" hidden></a></p>
+        <p id="status" class="status" role="status"></p>
+      </div>
+      <noscript><p class="noscript">Send bilder og regnummer til post@biloppretteren.no, eller ring 62 48 05 04.</p></noscript>
+    </form>
+  </div>
+</section>
+<section class="contact" id="kontakt" aria-labelledby="kontakt-h">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="kontakt-h">Velkommen innom</h2>
+      <p class="contact-lede">Verkstedet er åpent mandag–fredag 07.30–16.00. Trenger du berging, ring vakttelefonen når som helst.</p>
+    </div>
+    <div class="contact-list">
+      <ul class="phones"><li><span>Verkstedet</span> <a href="tel:+4762480504">62 48 05 04</a></li><li><span>Vakttelefon, berging</span> <a href="tel:+4790025667">900 25 667</a></li></ul>
+      <p><span>E-post</span> <a href="mailto:post@biloppretteren.no">post@biloppretteren.no</a></p>
+      <p><span>Adresse</span> Glåmveien 6, 2500 Tynset</p>
+      
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot"><div class="wrap"><p>Larsen &amp; Waagan Karosseri og Lakk AS, Glåmveien 6, 2500 Tynset</p><p><a href="tel:+4762480504">62 48 05 04</a></p></div></footer>
+<div class="callbar" id="callbar">
+  <a href="tel:+4762480504" class="cb-call">Ring 62 48 05 04</a>
+  <a href="#forespørsel" class="cb-req">Skadeanslag</a>
+</div>
+<script>window.FORM_CFG = {"email": "post@biloppretteren.no", "sms": null, "ui": {"sendSms": "Send som SMS", "sendMail": "Send som e-post", "altMail": "Send som e-post i stedet", "altSms": "Send som SMS i stedet", "hintSms": "Meldingsappen åpnes med teksten ferdig skrevet. Legg ved bilde før du trykker send.", "hintMail": "E-postprogrammet ditt åpnes med teksten ferdig skrevet. Legg ved bilde før du sender.", "missing": "Fyll ut", "opened": "Meldingen er klar. Sjekk at alt stemmer, og trykk send i appen.", "copied": "Teksten er kopiert. Lim den inn i en SMS eller e-post.", "copyFail": "Teksten er markert. Kopier den med Ctrl+C eller ved å holde fingeren på den."}, "panels": [{"id": "p1", "heading": "Skadeanslag til Larsen & Waagan", "subject": "Skadeanslag – {regnr}", "footer": null, "fields": [{"name": "skade", "type": "chips", "required": true, "msgLabel": "Skade", "yes": null, "upper": null}, {"name": "regnr", "type": "text", "required": true, "msgLabel": "Regnr", "yes": null, "upper": true}, {"name": "bil", "type": "text", "required": null, "msgLabel": "Bil", "yes": null, "upper": null}, {"name": "forsikring", "type": "chips", "required": null, "msgLabel": "Forsikring", "yes": null, "upper": null}, {"name": "skadenr", "type": "text", "required": null, "msgLabel": "Skadenummer", "yes": null, "upper": null}, {"name": "leiebil", "type": "chips", "required": null, "msgLabel": "Leiebil", "yes": null, "upper": null}, {"name": "kjorbar", "type": "chips", "required": null, "msgLabel": "Kjørbar", "yes": null, "upper": null}, {"name": "beskrivelse", "type": "textarea", "required": null, "msgLabel": "Beskrivelse", "yes": null, "upper": null}, {"name": "navn", "type": "text", "required": true, "msgLabel": "Navn", "yes": null, "upper": null}, {"name": "telefon", "type": "text", "required": true, "msgLabel": "Telefon", "yes": null, "upper": null}, {"name": "epost", "type": "text", "required": null, "msgLabel": "E-post", "yes": null, "upper": null}], "alerts": [{"id": "a-berg", "field": "kjorbar", "values": ["Nei"]}]}]};</script>
+<script>
+(function(){
+  var C = window.FORM_CFG, T = C.ui;
+  var ua = navigator.userAgent || "";
+  var mobile = /Android|iPhone|iPad|iPod/i.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua));
+  var form = document.getElementById("req");
+  var tabs = form.querySelectorAll("[data-tab]");
+  var panels = form.querySelectorAll("[data-panel]");
+  var current = panels.length ? panels[0].getAttribute("data-panel") : null;
+  var preview = document.getElementById("preview");
+  var primary = document.getElementById("send-primary");
+  var secondary = document.getElementById("send-secondary");
+  var copyBtn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  var errBox = document.getElementById("errors");
+
+  function activePanel(){ return current ? form.querySelector('[data-panel="'+current+'"]') : form; }
+  function panelCfg(){ for (var i=0;i<C.panels.length;i++){ if(C.panels[i].id===current) return C.panels[i]; } return C.panels[0]; }
+
+  function val(f, scope){
+    if (f.type === "chips"){
+      var out = [];
+      scope.querySelectorAll('input[name="'+f.name+'"]:checked').forEach(function(i){ out.push(i.value); });
+      return out.join(", ");
+    }
+    if (f.type === "check"){
+      var c = scope.querySelector('input[name="'+f.name+'"]');
+      return c && c.checked ? f.yes : "";
+    }
+    var el = scope.querySelector('[name="'+f.name+'"]');
+    var v = el ? el.value.replace(/\s+$/,"").replace(/^\s+/,"") : "";
+    return f.upper ? v.toUpperCase() : v;
+  }
+
+  function compose(){
+    var p = panelCfg(), scope = activePanel(), lines = [p.heading, ""];
+    p.fields.forEach(function(f){
+      var v = val(f, scope);
+      if (!v) return;
+      if (f.type === "textarea"){ lines.push(""); lines.push(f.msgLabel + ":"); lines.push(v); lines.push(""); }
+      else if (f.type === "check"){ lines.push(v); }
+      else { lines.push(f.msgLabel + ": " + v); }
+    });
+    if (p.footer){ lines.push(""); lines.push(p.footer); }
+    return lines.join("\n").replace(/\n{3,}/g, "\n\n").replace(/\n+$/,"");
+  }
+
+  function missing(){
+    var p = panelCfg(), scope = activePanel(), miss = [];
+    p.fields.forEach(function(f){ if (f.required && !val(f, scope)) miss.push(f); });
+    return miss;
+  }
+
+  function hrefs(text){
+    var p = panelCfg();
+    var subj = p.subject.replace(/\{(\w+)\}/g, function(m, n){ var f=null; p.fields.forEach(function(x){ if(x.name===n) f=x; }); return f ? val(f, activePanel()) : ""; }).replace(/[\s,–-]+$/, "");
+    var mail = "mailto:" + C.email + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(text);
+    var sms = C.sms ? "sms:" + C.sms + "?&body=" + encodeURIComponent(text) : null;
+    return {mail: mail, sms: sms};
+  }
+
+  function update(){
+    var text = compose();
+    preview.textContent = text;
+    var h = hrefs(text);
+    var useSms = mobile && h.sms;
+    primary.href = useSms ? h.sms : h.mail;
+    primary.textContent = useSms ? T.sendSms : T.sendMail;
+    if (secondary){
+      if (h.sms){
+        secondary.hidden = false;
+        secondary.href = useSms ? h.mail : h.sms;
+        secondary.textContent = useSms ? T.altMail : T.altSms;
+      } else { secondary.hidden = true; }
+    }
+    var hint = document.getElementById("send-hint");
+    if (hint) hint.textContent = useSms ? T.hintSms : T.hintMail;
+    // conditional alerts
+    var p = panelCfg(), scope = activePanel();
+    (p.alerts || []).forEach(function(a){
+      var box = document.getElementById(a.id);
+      var f = null; p.fields.forEach(function(x){ if (x.name === a.field) f = x; });
+      var v = f ? val(f, scope) : "";
+      var on = (f && f.type === "check") ? !!v : a.values.some(function(x){ return v.split(", ").indexOf(x) > -1; });
+      box.hidden = !on;
+    });
+    form.querySelectorAll(".field.invalid").forEach(function(el){
+      var n = el.getAttribute("data-name"); var f=null; p.fields.forEach(function(x){ if(x.name===n) f=x; });
+      if (f && val(f, scope)) el.classList.remove("invalid");
+    });
+    if (errBox && !errBox.hidden && missing().length === 0) errBox.hidden = true;
+  }
+
+  function guard(e){
+    var miss = missing();
+    if (miss.length){
+      e.preventDefault();
+      var scope = activePanel();
+      miss.forEach(function(f){ var el = scope.querySelector('.field[data-name="'+f.name+'"]'); if (el) el.classList.add("invalid"); });
+      errBox.textContent = T.missing + " " + miss.map(function(f){ return f.msgLabel.toLowerCase(); }).join(", ") + ".";
+      errBox.hidden = false;
+      var first = scope.querySelector('.field[data-name="'+miss[0].name+'"] input, .field[data-name="'+miss[0].name+'"] textarea');
+      if (first) first.focus();
+      return false;
+    }
+    status.textContent = T.opened;
+  }
+
+  primary.addEventListener("click", guard);
+  if (secondary) secondary.addEventListener("click", guard);
+  copyBtn.addEventListener("click", function(){
+    var text = compose();
+    function ok(){ status.textContent = T.copied; }
+    function fail(){
+      var r = document.createRange(); r.selectNodeContents(preview);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      status.textContent = T.copyFail;
+    }
+    if (navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(text).then(ok, fail); } else { fail(); }
+  });
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+  form.addEventListener("submit", function(e){ e.preventDefault(); });
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){
+      current = t.getAttribute("data-tab");
+      tabs.forEach(function(x){ x.setAttribute("aria-selected", x===t ? "true" : "false"); });
+      panels.forEach(function(p){ p.hidden = p.getAttribute("data-panel") !== current; });
+      if (errBox) errBox.hidden = true;
+      update();
+    });
+  });
+  update();
+
+  // mobile call bar: hide while the form is on screen
+  var bar = document.getElementById("callbar");
+  if (bar && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ bar.classList.toggle("away", en.isIntersecting); });
+    }, {threshold: 0.05});
+    io.observe(document.getElementById("forespørsel") || form);
+  }
+})();
+
+</script>
+</body>
+</html>

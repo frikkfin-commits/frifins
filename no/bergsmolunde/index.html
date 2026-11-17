@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bergsmo og Lunde – tømrer i Snåsa</title>
+<meta name="description" content="Tømrer i Snåsa. Rehabilitering, tilbygg, nybygg og våtrom. Våtromssertifisert. Ring 924 81 405.">
+<meta name="theme-color" content="#2f4a32">
+<link rel="preload" as="image" href="hero.jpg">
+<style>
+@font-face{font-family:'Alegreya';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/alegreya-latin-500-normal.woff2) format('woff2');}
+@font-face{font-family:'Alegreya';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/alegreya-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/alegreya-sans-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/alegreya-sans-latin-500-normal.woff2) format('woff2');}
+@font-face{font-family:'Alegreya Sans';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/alegreya-sans-latin-700-normal.woff2) format('woff2');}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);line-height:1.08;margin:0}
+h2{font-size:clamp(1.75rem,3.2vw,2.5rem);margin-bottom:.6rem}
+h3{font-size:1.15rem;line-height:1.25}
+p{margin:0 0 1rem}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:99}
+.skip:focus{left:.5rem;top:.5rem}
+:focus-visible{outline:3px solid var(--focus,var(--acc));outline-offset:2px}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1.5rem;padding:.7rem 1.25rem;background:var(--top-bg,var(--bg));border-bottom:1px solid var(--line)}
+.brand{text-decoration:none;padding:.75rem 0;font-family:var(--head);font-weight:700;font-size:1.15rem;line-height:1.1;margin-right:auto;color:var(--top-ink,var(--ink))}
+.nav{display:flex;gap:1.25rem}
+.nav a{text-decoration:none;color:var(--top-ink,var(--ink));font-size:.95rem}
+.nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.top-call{text-decoration:none;font-weight:700;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;gap:.3rem;background:var(--acc);color:var(--acc-ink);padding:.55rem .9rem;border-radius:var(--r-btn,6px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.25rem;border-radius:var(--r-btn,6px);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;text-align:center}
+.btn-main{background:var(--acc);color:var(--acc-ink)}
+.btn-line{border-color:currentColor;color:inherit;background:transparent}
+.btn-send{background:var(--send,var(--ink));color:var(--send-ink,#fff)}
+.btn-ghost{background:transparent;border-color:var(--line-strong,var(--ink));color:var(--ink)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.services{padding:4.5rem 0 3.5rem}
+.section-lede{max-width:60ch;color:var(--ink2)}
+.svc{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 2.5rem}
+.svc li{padding:1.1rem 0 1.2rem;border-top:1px solid var(--line)}
+.svc p{margin:.35rem 0 0;color:var(--ink2);max-width:46ch}
+.request{padding:4rem 0;background:var(--req-bg,var(--surface));color:var(--req-ink,var(--ink))}
+.req-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:3rem;align-items:start}
+.req-head p{max-width:46ch}
+.req-head{position:sticky;top:6rem}
+.tips{margin-top:1.5rem;padding:1.1rem 1.2rem;background:var(--tips-bg,rgba(255,255,255,.6));border-left:4px solid var(--acc)}
+.tips h3{font-size:1rem;margin-bottom:.4rem}
+.tips ol{margin:0;padding-left:1.2rem}
+.req-form{background:var(--form-bg,#fff);color:var(--ink);padding:1.5rem;border-radius:var(--r-box,10px);border:1px solid var(--line)}
+.field{border:0;margin:0 0 1.15rem;padding:0;min-width:0}
+.field>label,.field legend{display:block;font-weight:700;margin-bottom:.4rem;padding:0}
+.hint{display:block;font-size:.9rem;color:var(--ink2);margin:-.2rem 0 .45rem}
+.req{color:var(--req-star,#b42318)}
+input[type=text],input[type=tel],input[type=email],input[type=number],textarea{width:100%;font:inherit;padding:.7rem .8rem;border:1.5px solid var(--field-line,#9aa5ad);border-radius:6px;background:#fff;color:var(--ink);min-height:48px}
+textarea{resize:vertical;min-height:110px}
+.field.invalid input,.field.invalid textarea{border-color:#b42318;background:#fff5f4}
+.field.invalid legend,.field.invalid>label{color:#b42318}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:.5rem .9rem;border:1.5px solid var(--field-line,#9aa5ad);border-radius:var(--r-chip,999px);background:#fff;cursor:pointer;line-height:1.2}
+.chip input:checked+span{background:var(--chip-on,var(--ink));border-color:var(--chip-on,var(--ink));color:var(--chip-on-ink,#fff)}
+.chip input:focus-visible+span{outline:3px solid var(--focus,var(--acc));outline-offset:2px}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-weight:700;cursor:pointer}
+.check input{width:22px;height:22px;margin-top:.1rem;flex:none;accent-color:var(--ink)}
+.alert{margin:-.3rem 0 1.2rem;padding:.9rem 1rem;border-radius:6px;background:#fff4d6;border:1.5px solid #d99a00;color:#3d2b00}
+.alert p{margin:0}
+.alert a{font-weight:700}
+.tabs{display:flex;gap:.4rem;margin-bottom:1.25rem;border-bottom:2px solid var(--line)}
+.tabs button{font:inherit;font-weight:700;padding:.7rem 1rem;min-height:48px;border:0;background:transparent;color:var(--ink2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--acc-strong,var(--acc))}
+.panel-intro{color:var(--ink2)}
+.out{margin-top:1.5rem;border-top:1px solid var(--line);padding-top:1.25rem}
+.out-h{font-weight:700;margin-bottom:.5rem}
+.preview{white-space:pre-wrap;word-break:break-word;font-family:var(--body);font-size:.95rem;background:var(--pre-bg,#f3f5f6);padding:1rem;border-radius:6px;margin:0 0 1rem;max-height:340px;overflow:auto}
+.errors{color:#b42318;font-weight:700}
+.send{display:flex;flex-wrap:wrap;gap:.6rem}
+.send .btn{flex:1 1 200px}
+.send-hint{font-size:.92rem;color:var(--ink2);margin:.75rem 0 .25rem}
+.alt-link{font-size:.95rem}
+.status{font-weight:700;min-height:1.2em;margin:0}
+.noscript{padding:1rem;background:#fff4d6}
+.contact{padding:4rem 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.contact-list p,.contact-list li{margin:0 0 .6rem}
+.contact-list span{display:inline-block;min-width:8.5rem;color:var(--ink2)}
+.contact-list a{font-weight:700;overflow-wrap:anywhere}
+.phones{list-style:none;padding:0;margin:0 0 .6rem}
+.contact-lede{max-width:44ch;color:var(--ink2)}
+.foot{padding:2rem 0 2.5rem;border-top:1px solid var(--line);font-size:.95rem;color:var(--ink2)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
+.foot p{margin:0}
+.callbar{display:none}
+@media (max-width:860px){
+  .nav{display:none}
+  .req-grid,.contact-grid{grid-template-columns:1fr;gap:1.5rem}
+  .req-head{position:static}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:.5rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--bar-bg,var(--ink));transition:transform .2s ease}
+  .callbar.away{transform:translateY(110%);visibility:hidden}
+  .callbar a{flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:var(--r-btn,6px);font-weight:700;text-decoration:none}
+  .cb-call{background:var(--acc);color:var(--acc-ink)}
+  .cb-req{border:2px solid rgba(255,255,255,.7);color:#fff}
+  body{padding-bottom:4.5rem}
+  .top-call-l{display:none}
+}
+@media (max-width:420px){
+  .top{gap:.6rem;padding:.6rem .9rem}
+  .brand{font-size:1rem}
+  .top-call{padding:.5rem .65rem;font-size:.95rem}
+  .req-form{padding:1.1rem}
+  .contact-list span{display:block;min-width:0}
+}
+
+
+:root{--bg:#eef1ec;--surface:#e0e6dc;--ink:#22301f;--ink2:#53604f;--acc:#9a5b2e;--acc-ink:#fff;--line:#c9d1c3;--head:'Alegreya',serif;--body:'Alegreya Sans',sans-serif;--send:#2f4a32;--chip-on:#2f4a32;--r-btn:4px;--bar-bg:#2f4a32}
+body{font-size:1.15rem;line-height:1.6}
+.brand{font-size:1.4rem}
+.band-img img{width:100%;height:min(70vh,620px);object-fit:cover;object-position:50% 55%}
+.band-text{max-width:760px;padding:2.5rem 0 0}
+.hero h1{font-weight:700;font-size:clamp(3rem,8vw,6.5rem);line-height:.92;color:#2f4a32}
+.lede{font-size:1.25rem;color:var(--ink2);margin-top:1rem;max-width:46ch}
+.btn-line{color:var(--ink)}
+.svc{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.svc h3{font-size:1.5rem;font-weight:700;color:#2f4a32}
+.gallery{padding:1rem 0 4rem}
+.g-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:1.5rem;align-items:start}
+.g-text h2{font-size:1.8rem}
+.g-grid figure{margin:0}.g-grid img{width:100%;aspect-ratio:3/4;object-fit:cover}
+@media (max-width:860px){.band-img img{height:260px}.band-text{padding-top:1.5rem}.g-grid{grid-template-columns:1fr 1fr}.g-text{grid-column:1/-1}}
+
+</style>
+</head>
+<body class="v-band">
+<a class="skip" href="#forespørsel">Send forespørsel</a>
+<header class="top">
+  <a class="brand" href="#">Bergsmo og Lunde</a>
+  <nav class="nav" aria-label="Meny"><a href="#tjenester">Tjenester</a><a href="#forespørsel">Forespørsel</a><a href="#kontakt">Kontakt</a></nav>
+  <a class="top-call" href="tel:+4792481405"><span class="top-call-l">Ring</span> 924 81 405</a>
+</header>
+<main>
+<section class="hero hero-band">
+  <div class="band-img"><img src="hero.jpg" width="1800" height="1201" alt="To tømmerhus på en grønn tun" class="" decoding="async"></div>
+  <div class="wrap band-wrap"><div class="band-text"><h1>Tømrer i Snåsa</h1><p class="lede">Vi rehabiliterer eldre hus, bygger tilbygg og nybygg, og gjør bad og våtrom. Send bilder av det som skal gjøres, så kommer vi på befaring.</p><div class="hero-cta"><a class="btn btn-main" href="#forespørsel">Be om befaring</a><a class="btn btn-line" href="tel:+4792481405">Ring 924 81 405</a></div></div></div>
+</section>
+<section class="services" id="tjenester" aria-labelledby="svc-h">
+  <div class="wrap">
+    <h2 id="svc-h">Fra gammelt hus til nytt bad</h2>
+    
+    <ul class="svc"><li><h3>Rehabilitering</h3><p>Utbedring og modernisering av eldre hus, innvendig og utvendig.</p></li><li><h3>Tilbygg</h3><p>Mer plass med tilbygg, påbygg eller ny veranda.</p></li><li><h3>Nybygg</h3><p>Oppføring av bolig, hytte og garasje.</p></li><li><h3>Bad og våtrom</h3><p>Vi er våtromssertifisert og bygger badet fra riving til ferdig rom.</p></li></ul>
+  </div>
+</section>
+<section class="gallery" aria-label="Bilder"><div class="wrap g-grid g-2"><div class="g-text"><h2>Fra Bergsmoen i Snåsa</h2><p>Hovedfokuset vårt er rehabilitering av eksisterende bygg og oppføring av nybygg.</p></div><figure><img src="takstol.jpg" width="800" height="779" alt="Tømrere reiser takstoler" class="" loading="lazy" decoding="async"></figure><figure><img src="bad.jpg" width="800" height="779" alt="Ferdig bad med dusj og servant" class="" loading="lazy" decoding="async"></figure></div></section>
+<section class="request" id="forespørsel" aria-labelledby="req-h">
+  <div class="wrap req-grid">
+    <div class="req-head">
+      <h2 id="req-h">Be om befaring</h2>
+      <p>Fortell hva du har tenkt. Meldingen åpnes ferdig skrevet, og du kan legge ved bilder av rommet eller huset før du sender.</p>
+      
+      
+    </div>
+    <form id="req" class="req-form" novalidate>
+      
+      <div class="panel" data-panel="p1"><fieldset class="field chips-field" data-name="hva"><legend>Hva gjelder det? <span class="req" aria-hidden="true">*</span></legend><div class="chips"><label class="chip"><input type="radio" name="hva" value="Bad"><span>Bad</span></label><label class="chip"><input type="radio" name="hva" value="Rehabilitering"><span>Rehabilitering</span></label><label class="chip"><input type="radio" name="hva" value="Tilbygg"><span>Tilbygg</span></label><label class="chip"><input type="radio" name="hva" value="Nybygg"><span>Nybygg</span></label><label class="chip"><input type="radio" name="hva" value="Noe annet"><span>Noe annet</span></label></div></fieldset><div class="field" data-name="kvm"><label for="p1-kvm">Omtrent hvor stort? (m²)</label><input id="p1-kvm" type="text" name="kvm" maxlength="6" inputmode="numeric" placeholder=""></div><fieldset class="field chips-field" data-name="riving"><legend>Må noe rives først?</legend><div class="chips"><label class="chip"><input type="radio" name="riving" value="Ja"><span>Ja</span></label><label class="chip"><input type="radio" name="riving" value="Nei"><span>Nei</span></label><label class="chip"><input type="radio" name="riving" value="Vet ikke"><span>Vet ikke</span></label></div></fieldset><fieldset class="field chips-field" data-name="start"><legend>Når ønsker du oppstart?</legend><div class="chips"><label class="chip"><input type="radio" name="start" value="Så snart som mulig"><span>Så snart som mulig</span></label><label class="chip"><input type="radio" name="start" value="Til våren"><span>Til våren</span></label><label class="chip"><input type="radio" name="start" value="Senere"><span>Senere</span></label></div></fieldset><div class="field" data-name="beskrivelse"><label for="p1-beskrivelse">Beskriv jobben</label><textarea id="p1-beskrivelse" name="beskrivelse" rows="4" maxlength="800" placeholder="For eksempel: badet er fra 80-tallet og skal totalrenoveres."></textarea></div><div class="field" data-name="navn"><label for="p1-navn">Navn <span class="req" aria-hidden="true">*</span></label><input id="p1-navn" type="text" name="navn" maxlength="60" autocomplete="name" placeholder=""></div><div class="field" data-name="telefon"><label for="p1-telefon">Telefon <span class="req" aria-hidden="true">*</span></label><input id="p1-telefon" type="tel" name="telefon" maxlength="20" autocomplete="tel" inputmode="tel" placeholder=""></div><div class="field" data-name="adresse"><label for="p1-adresse">Adresse eller sted <span class="req" aria-hidden="true">*</span></label><input id="p1-adresse" type="text" name="adresse" maxlength="100" autocomplete="street-address" placeholder=""></div></div>
+      <div class="out">
+        <p class="out-h">Slik blir meldingen</p>
+        <pre id="preview" class="preview" aria-live="polite"></pre>
+        <p id="errors" class="errors" role="alert" hidden></p>
+        <div class="send">
+          <a id="send-primary" class="btn btn-send" href="mailto:omb@bergsmolunde.no">Send som e-post</a>
+          <button type="button" id="copy" class="btn btn-ghost">Kopier teksten</button>
+        </div>
+        <p class="send-hint" id="send-hint"></p>
+        <p><a id="send-secondary" class="alt-link" href="#" hidden></a></p>
+        <p id="status" class="status" role="status"></p>
+      </div>
+      <noscript><p class="noscript">Ring 924 81 405 eller send e-post til omb@bergsmolunde.no.</p></noscript>
+    </form>
+  </div>
+</section>
+<section class="contact" id="kontakt" aria-labelledby="kontakt-h">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="kontakt-h">Ta kontakt</h2>
+      <p class="contact-lede">Ring oss, send en melding eller bruk skjemaet, så avtaler vi befaring.</p>
+    </div>
+    <div class="contact-list">
+      <ul class="phones"><li><span>Telefon</span> <a href="tel:+4792481405">924 81 405</a></li></ul>
+      <p><span>E-post</span> <a href="mailto:omb@bergsmolunde.no">omb@bergsmolunde.no</a></p>
+      <p><span>Adresse</span> Bergsmoen vestre, 7760 Snåsa</p>
+      <p><span>E-post Gøran</span> <a href="mailto:gl@bergsmolunde.no">gl@bergsmolunde.no</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot"><div class="wrap"><p>Bergsmo og Lunde AS, Bergsmoen vestre, 7760 Snåsa</p><p><a href="tel:+4792481405">924 81 405</a></p></div></footer>
+<div class="callbar" id="callbar">
+  <a href="tel:+4792481405" class="cb-call">Ring 924 81 405</a>
+  <a href="#forespørsel" class="cb-req">Befaring</a>
+</div>
+<script>window.FORM_CFG = {"email": "omb@bergsmolunde.no", "sms": "+4792481405", "ui": {"sendSms": "Send som SMS", "sendMail": "Send som e-post", "altMail": "Send som e-post i stedet", "altSms": "Send som SMS i stedet", "hintSms": "Meldingsappen åpnes med teksten ferdig skrevet. Legg ved bilde før du trykker send.", "hintMail": "E-postprogrammet ditt åpnes med teksten ferdig skrevet. Legg ved bilde før du sender.", "missing": "Fyll ut", "opened": "Meldingen er klar. Sjekk at alt stemmer, og trykk send i appen.", "copied": "Teksten er kopiert. Lim den inn i en SMS eller e-post.", "copyFail": "Teksten er markert. Kopier den med Ctrl+C eller ved å holde fingeren på den."}, "panels": [{"id": "p1", "heading": "Befaring hos Bergsmo og Lunde", "subject": "Befaring – {hva}", "footer": null, "fields": [{"name": "hva", "type": "chips", "required": true, "msgLabel": "Gjelder", "yes": null, "upper": null}, {"name": "kvm", "type": "text", "required": null, "msgLabel": "Størrelse (m²)", "yes": null, "upper": null}, {"name": "riving", "type": "chips", "required": null, "msgLabel": "Riving", "yes": null, "upper": null}, {"name": "start", "type": "chips", "required": null, "msgLabel": "Oppstart", "yes": null, "upper": null}, {"name": "beskrivelse", "type": "textarea", "required": null, "msgLabel": "Beskrivelse", "yes": null, "upper": null}, {"name": "navn", "type": "text", "required": true, "msgLabel": "Navn", "yes": null, "upper": null}, {"name": "telefon", "type": "text", "required": true, "msgLabel": "Telefon", "yes": null, "upper": null}, {"name": "adresse", "type": "text", "required": true, "msgLabel": "Adresse", "yes": null, "upper": null}], "alerts": []}]};</script>
+<script>
+(function(){
+  var C = window.FORM_CFG, T = C.ui;
+  var ua = navigator.userAgent || "";
+  var mobile = /Android|iPhone|iPad|iPod/i.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua));
+  var form = document.getElementById("req");
+  var tabs = form.querySelectorAll("[data-tab]");
+  var panels = form.querySelectorAll("[data-panel]");
+  var current = panels.length ? panels[0].getAttribute("data-panel") : null;
+  var preview = document.getElementById("preview");
+  var primary = document.getElementById("send-primary");
+  var secondary = document.getElementById("send-secondary");
+  var copyBtn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  var errBox = document.getElementById("errors");
+
+  function activePanel(){ return current ? form.querySelector('[data-panel="'+current+'"]') : form; }
+  function panelCfg(){ for (var i=0;i<C.panels.length;i++){ if(C.panels[i].id===current) return C.panels[i]; } return C.panels[0]; }
+
+  function val(f, scope){
+    if (f.type === "chips"){
+      var out = [];
+      scope.querySelectorAll('input[name="'+f.name+'"]:checked').forEach(function(i){ out.push(i.value); });
+      return out.join(", ");
+    }
+    if (f.type === "check"){
+      var c = scope.querySelector('input[name="'+f.name+'"]');
+      return c && c.checked ? f.yes : "";
+    }
+    var el = scope.querySelector('[name="'+f.name+'"]');
+    var v = el ? el.value.replace(/\s+$/,"").replace(/^\s+/,"") : "";
+    return f.upper ? v.toUpperCase() : v;
+  }
+
+  function compose(){
+    var p = panelCfg(), scope = activePanel(), lines = [p.heading, ""];
+    p.fields.forEach(function(f){
+      var v = val(f, scope);
+      if (!v) return;
+      if (f.type === "textarea"){ lines.push(""); lines.push(f.msgLabel + ":"); lines.push(v); lines.push(""); }
+      else if (f.type === "check"){ lines.push(v); }
+      else { lines.push(f.msgLabel + ": " + v); }
+    });
+    if (p.footer){ lines.push(""); lines.push(p.footer); }
+    return lines.join("\n").replace(/\n{3,}/g, "\n\n").replace(/\n+$/,"");
+  }
+
+  function missing(){
+    var p = panelCfg(), scope = activePanel(), miss = [];
+    p.fields.forEach(function(f){ if (f.required && !val(f, scope)) miss.push(f); });
+    return miss;
+  }
+
+  function hrefs(text){
+    var p = panelCfg();
+    var subj = p.subject.replace(/\{(\w+)\}/g, function(m, n){ var f=null; p.fields.forEach(function(x){ if(x.name===n) f=x; }); return f ? val(f, activePanel()) : ""; }).replace(/[\s,–-]+$/, "");
+    var mail = "mailto:" + C.email + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(text);
+    var sms = C.sms ? "sms:" + C.sms + "?&body=" + encodeURIComponent(text) : null;
+    return {mail: mail, sms: sms};
+  }
+
+  function update(){
+    var text = compose();
+    preview.textContent = text;
+    var h = hrefs(text);
+    var useSms = mobile && h.sms;
+    primary.href = useSms ? h.sms : h.mail;
+    primary.textContent = useSms ? T.sendSms : T.sendMail;
+    if (secondary){
+      if (h.sms){
+        secondary.hidden = false;
+        secondary.href = useSms ? h.mail : h.sms;
+        secondary.textContent = useSms ? T.altMail : T.altSms;
+      } else { secondary.hidden = true; }
+    }
+    var hint = document.getElementById("send-hint");
+    if (hint) hint.textContent = useSms ? T.hintSms : T.hintMail;
+    // conditional alerts
+    var p = panelCfg(), scope = activePanel();
+    (p.alerts || []).forEach(function(a){
+      var box = document.getElementById(a.id);
+      var f = null; p.fields.forEach(function(x){ if (x.name === a.field) f = x; });
+      var v = f ? val(f, scope) : "";
+      var on = (f && f.type === "check") ? !!v : a.values.some(function(x){ return v.split(", ").indexOf(x) > -1; });
+      box.hidden = !on;
+    });
+    form.querySelectorAll(".field.invalid").forEach(function(el){
+      var n = el.getAttribute("data-name"); var f=null; p.fields.forEach(function(x){ if(x.name===n) f=x; });
+      if (f && val(f, scope)) el.classList.remove("invalid");
+    });
+    if (errBox && !errBox.hidden && missing().length === 0) errBox.hidden = true;
+  }
+
+  function guard(e){
+    var miss = missing();
+    if (miss.length){
+      e.preventDefault();
+      var scope = activePanel();
+      miss.forEach(function(f){ var el = scope.querySelector('.field[data-name="'+f.name+'"]'); if (el) el.classList.add("invalid"); });
+      errBox.textContent = T.missing + " " + miss.map(function(f){ return f.msgLabel.toLowerCase(); }).join(", ") + ".";
+      errBox.hidden = false;
+      var first = scope.querySelector('.field[data-name="'+miss[0].name+'"] input, .field[data-name="'+miss[0].name+'"] textarea');
+      if (first) first.focus();
+      return false;
+    }
+    status.textContent = T.opened;
+  }
+
+  primary.addEventListener("click", guard);
+  if (secondary) secondary.addEventListener("click", guard);
+  copyBtn.addEventListener("click", function(){
+    var text = compose();
+    function ok(){ status.textContent = T.copied; }
+    function fail(){
+      var r = document.createRange(); r.selectNodeContents(preview);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      status.textContent = T.copyFail;
+    }
+    if (navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(text).then(ok, fail); } else { fail(); }
+  });
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+  form.addEventListener("submit", function(e){ e.preventDefault(); });
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){
+      current = t.getAttribute("data-tab");
+      tabs.forEach(function(x){ x.setAttribute("aria-selected", x===t ? "true" : "false"); });
+      panels.forEach(function(p){ p.hidden = p.getAttribute("data-panel") !== current; });
+      if (errBox) errBox.hidden = true;
+      update();
+    });
+  });
+  update();
+
+  // mobile call bar: hide while the form is on screen
+  var bar = document.getElementById("callbar");
+  if (bar && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ bar.classList.toggle("away", en.isIntersecting); });
+    }, {threshold: 0.05});
+    io.observe(document.getElementById("forespørsel") || form);
+  }
+})();
+
+</script>
+</body>
+</html>
