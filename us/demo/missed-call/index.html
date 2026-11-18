@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Missed-call text back · demo</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700;62..125,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121315;--bg2:#1B1C1F;--line:#2C2E33;--text:#F4F4F2;--mute:#A6A8AD;--acc:#5AB0FF;--ok:#35D07F}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.55 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+header{padding:28px 0 0}
+.kick{font-weight:600;color:var(--acc);font-size:15px}
+h1{font:800 clamp(40px,7vw,84px)/.95 Archivo,sans-serif;font-stretch:88%;letter-spacing:-.02em;margin:14px 0 18px;max-width:13ch}
+h1 em{font-style:normal;color:var(--acc)}
+.lede{font-size:clamp(18px,2vw,21px);color:#DADAD6;max-width:46ch;margin:0 0 30px}
+.stage{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;margin:10px 0 30px}
+.col h2{font:700 15px Figtree;color:var(--mute);margin:0 0 10px;letter-spacing:.02em}
+.phone{background:#000;border-radius:44px;padding:12px;box-shadow:0 30px 80px -30px rgba(0,0,0,.8),inset 0 0 0 2px #2a2a2e;max-width:360px;margin-inline:auto}
+.screen{background:#0E0F11;border-radius:34px;height:620px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.bar{display:flex;justify-content:space-between;padding:14px 22px 6px;font:600 13px Figtree;color:#ddd}
+.who{text-align:center;padding:8px 0 12px;border-bottom:1px solid #1f2024}
+.av{width:44px;height:44px;border-radius:50%;background:#2a2c31;margin:0 auto 6px;display:grid;place-items:center;font:700 17px Archivo}
+.who b{display:block;font-size:14px}.who span{font-size:12px;color:var(--mute)}
+.msgs{flex:1;padding:14px 12px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.m{max-width:80%;padding:9px 13px;border-radius:18px;font-size:15px;line-height:1.35;opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s}
+.m.show{opacity:1;transform:none}
+.in{background:#26282D;align-self:flex-start;border-bottom-left-radius:6px}
+.out{background:#2F7BFF;align-self:flex-end;border-bottom-right-radius:6px}
+.sys{align-self:center;font-size:12.5px;color:var(--mute);background:none;padding:2px}
+.call{position:absolute;inset:0;background:linear-gradient(#1b2a3a,#0b0f14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;transition:opacity .5s}
+.call.hide{opacity:0;pointer-events:none}
+.call .av{width:84px;height:84px;font-size:30px}
+.call b{font:700 24px Archivo}.call span{color:#B9C2CC}
+.ring{width:12px;height:12px;border-radius:50%;background:var(--ok);animation:p 1.2s infinite}
+@keyframes p{70%{box-shadow:0 0 0 14px rgba(53,208,127,0)}0%{box-shadow:0 0 0 0 rgba(53,208,127,.6)}}
+.note{position:absolute;left:10px;right:10px;top:46px;background:rgba(40,42,47,.96);border-radius:20px;padding:12px 14px;transform:translateY(-200px);opacity:0;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .3s;font-size:14px}
+.note.show{transform:none;opacity:1}
+.note small{color:var(--mute);font-weight:600;font-size:12px}
+.lead{margin:12px;background:#F4F4F2;color:#121315;border-radius:18px;padding:16px;opacity:0;transform:translateY(10px);transition:all .5s}
+.lead.show{opacity:1;transform:none}
+.lead h3{font:800 18px Archivo;margin:0 0 8px}
+.lead dl{display:grid;grid-template-columns:80px 1fr;gap:4px 10px;margin:0 0 12px;font-size:14.5px}
+.lead dt{color:#6C6E73;font-weight:600}.lead dd{margin:0;font-weight:600}
+.lead a{display:block;text-align:center;background:#121315;color:#fff;border-radius:999px;padding:11px;font-weight:700;text-decoration:none}
+.idle{margin:auto;text-align:center;color:#55585e;font-size:14px;padding:0 30px}
+.ctrl{display:flex;gap:12px;justify-content:center;margin:6px 0 60px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;font:700 16px Figtree;border:0;cursor:pointer;text-decoration:none}
+.btn.p{background:var(--acc);color:#0B1724}.btn.g{background:#24262b;color:#fff}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:40px 0 30px;border-top:1px solid var(--line)}
+.steps div{border-top:2px solid var(--acc);padding-top:14px}
+.steps b{display:block;font:700 20px Archivo;margin-bottom:4px}
+.steps p{margin:0;color:#CFCFCB}
+footer{padding:40px 0 80px;color:#7D8086;font-size:14px}
+@media (max-width:820px){.stage{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.screen{height:560px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style></head><body>
+<header class="wrap"><div class="kick" id="kick">Demo</div>
+<h1>Never lose a job <em>to a missed call.</em></h1>
+<p class="lede" id="lede">When you can’t pick up, the caller gets a text from your business in seconds. They tell you what they need, and you get the job written out on your phone.</p>
+</header>
+<main class="wrap">
+<div class="stage">
+<div class="col"><h2>Your customer</h2><div class="phone"><div class="screen" id="cust">
+<div class="bar"><span>9:41</span><span>●●●</span></div>
+<div class="who"><div class="av" id="ini1">K</div><b id="biz1">Kent Price Plumbing</b><span>Text message</span></div>
+<div class="msgs" id="cm"></div>
+<div class="call hide" id="callscr"><div class="av" id="ini2">K</div><b id="biz2">Kent Price Plumbing</b><span id="cstate">Calling…</span><div class="ring" id="ring"></div></div>
+</div></div></div>
+<div class="col"><h2>You, on the job</h2><div class="phone"><div class="screen" id="own">
+<div class="bar"><span>9:41</span><span>●●●</span></div>
+<div class="note" id="n1"><small>Missed call · now</small><br><b id="callerno">(270) 555-0142</b></div>
+<div class="note" id="n2"><small>New job · just now</small><br><b id="n2t">Water heater leaking · urgent</b></div>
+<p class="idle" id="idle">Press “Play the demo” to see what happens when you can’t answer.</p>
+<div class="lead" id="lead"><h3>New job from a missed call</h3><dl>
+<dt>Need</dt><dd id="l-need">Water heater leaking</dd><dt>Where</dt><dd>212 Oak St</dd><dt>When</dt><dd>As soon as possible</dd><dt>Phone</dt><dd>(270) 555-0142</dd></dl>
+<a href="#" onclick="return false">Call back now</a></div>
+</div></div></div>
+</div>
+<div class="ctrl"><button class="btn p" id="play">Play the demo</button></div>
+<section class="steps">
+<div><b>Keep your number</b><p>Nothing changes for your customers. Calls you don’t answer roll over to the system.</p></div>
+<div><b>A text in seconds</b><p>The caller gets a friendly text from your business, so they don’t call the next company on Google.</p></div>
+<div><b>The job, written out</b><p>You get what they need, where, and how urgent, ready to call back when you’re free.</p></div>
+</section>
+</main>
+<footer class="wrap">Demo by Frifins Builds. Names and numbers in the demo are examples.</footer>
+<script>
+(function(){
+var q=new URLSearchParams(location.search);
+var BIZ=q.get('biz')||'Kent Price Plumbing',NEED=q.get('need')||'Water heater leaking',FIRST=(q.get('owner')||BIZ.split(' ')[0]);
+var I=BIZ.trim()[0].toUpperCase();
+['biz1','biz2'].forEach(function(i){document.getElementById(i).textContent=BIZ});
+['ini1','ini2'].forEach(function(i){document.getElementById(i).textContent=I});
+document.getElementById('l-need').textContent=NEED;document.getElementById('n2t').textContent=NEED+' · urgent';
+if(q.get('biz'))document.getElementById('kick').textContent='Demo for '+BIZ;
+var cm=document.getElementById('cm');
+function msg(cls,t){var d=document.createElement('div');d.className='m '+cls;d.textContent=t;cm.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('show')})})}
+function $(i){return document.getElementById(i)}
+var timers=[];function at(ms,f){timers.push(setTimeout(f,ms))}
+function reset(){timers.forEach(clearTimeout);timers=[];cm.innerHTML='';['n1','n2','lead'].forEach(function(i){$(i).classList.remove('show')});$('idle').style.display='';$('callscr').classList.add('hide');$('ring').style.display=''}
+$('play').addEventListener('click',function(){
+reset();$('idle').style.display='none';$('play').textContent='Play again';
+$('callscr').classList.remove('hide');$('cstate').textContent='Calling…';
+at(2600,function(){$('cstate').textContent='No answer';$('ring').style.display='none';$('n1').classList.add('show')});
+at(3800,function(){$('callscr').classList.add('hide');msg('sys','Missed call')});
+at(5000,function(){msg('in','Hi, this is '+BIZ+'. Sorry we missed your call, we’re out on a job. What do you need help with? Reply here and we’ll get right back to you.')});
+at(7600,function(){msg('out',NEED+'. Can someone come today?')});
+at(9000,function(){msg('in','Thanks. What’s the address, and is it urgent?')});
+at(10800,function(){msg('out','212 Oak St. Yes, urgent please')});
+at(12000,function(){msg('in','Got it. We’ll call you back as soon as we’re off this job.');$('n1').classList.remove('show');$('n2').classList.add('show')});
+at(13800,function(){$('n2').classList.remove('show');$('lead').classList.add('show')});
+});
+})();
+</script>
+</body></html>
