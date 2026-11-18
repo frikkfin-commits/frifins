@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Installatør Stig Lind – elektriker på Myre</title>
+<meta name="description" content="Elektriker på Myre i Øksnes. Feilsøking, sikringsskap, oppussing, nybygg og elbillader. Send bilde av sikringsskapet eller ring 91 75 01 10.">
+<meta name="theme-color" content="#18232b">
+<link rel="icon" href="data:,">
+<style>
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-condensed-latin-600-normal.woff2) format('woff2');}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/barlow-condensed-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/barlow-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-latin-600-normal.woff2) format('woff2');}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/barlow-latin-700-normal.woff2) format('woff2');}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;scroll-padding-bottom:5rem;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);margin:0;font-weight:var(--hw,700)}
+p{margin:0 0 1rem}
+.wrap{max-width:1160px;margin:0 auto;padding:0 1.25rem}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:99}
+.skip:focus{left:.5rem;top:.5rem}
+:focus-visible{outline:3px solid var(--focus,var(--acc));outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.25rem;border-radius:var(--r-btn,4px);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;text-align:center;line-height:1.2}
+.btn-main{background:var(--acc);color:var(--acc-ink)}
+.btn-line{border-color:currentColor;color:inherit;background:transparent}
+.btn-send{background:var(--send,var(--ink));color:var(--send-ink,#fff)}
+.btn-ghost{background:transparent;border-color:var(--line-strong,var(--ink));color:var(--ink)}
+.req-form{background:var(--form-bg,#fff);color:var(--ink);padding:1.5rem;border-radius:var(--r-box,4px);border:1px solid var(--line)}
+.field{border:0;margin:0 0 1.15rem;padding:0;min-width:0}
+.field>label,.field legend{display:block;font-weight:700;margin-bottom:.4rem;padding:0}
+.hint{display:block;font-size:.92rem;color:var(--ink2);margin:-.2rem 0 .45rem}
+.req{color:#b42318}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;font:inherit;padding:.7rem .8rem;border:1.5px solid var(--field-line,#8d979f);border-radius:var(--r-field,4px);background:#fff;color:#1b1f22;min-height:48px}
+textarea{resize:vertical;min-height:110px}
+.field.invalid input,.field.invalid textarea{border-color:#b42318;background:#fff5f4}
+.field.invalid legend,.field.invalid>label{color:#b42318}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer;width:100%;height:100%}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:.5rem .9rem;border:1.5px solid var(--field-line,#8d979f);border-radius:var(--r-chip,4px);background:#fff;color:#1b1f22;cursor:pointer;line-height:1.2}
+.chip input:checked+span{background:var(--chip-on,var(--ink));border-color:var(--chip-on,var(--ink));color:var(--chip-on-ink,#fff)}
+.chip input:focus-visible+span{outline:3px solid var(--focus,var(--acc));outline-offset:2px}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-weight:700;cursor:pointer}
+.check input{width:22px;height:22px;margin-top:.1rem;flex:none}
+.alert{margin:-.3rem 0 1.2rem;padding:.9rem 1rem;border-radius:4px;background:#fff4d6;border:1.5px solid #c98d00;color:#3d2b00}
+.alert p{margin:0}
+.alert a{font-weight:700;white-space:nowrap}
+.tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem;border-bottom:2px solid var(--line)}
+.tabs button{font:inherit;font-weight:700;padding:.7rem 1rem;min-height:48px;border:0;background:transparent;color:var(--ink2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--acc-strong,var(--acc))}
+.panel-intro{color:var(--ink2)}
+.out{margin-top:1.5rem;border-top:1px solid var(--line);padding-top:1.25rem}
+.out-h{font-weight:700;margin-bottom:.5rem}
+.preview{white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;font-family:var(--body);font-size:.95rem;background:var(--pre-bg,#f2f4f5);color:#1b1f22;padding:1rem;border-radius:4px;margin:0 0 1rem;max-height:340px;overflow:auto}
+.errors{color:#b42318;font-weight:700}
+.send{display:flex;flex-wrap:wrap;gap:.6rem}
+.send .btn{flex:1 1 200px}
+.send-hint{font-size:.92rem;color:var(--ink2);margin:.75rem 0 .25rem}
+.alt-link{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
+.status{font-weight:700;min-height:1.2em;margin:0}
+.noscript{padding:1rem;background:#fff4d6}
+.callbar{display:none}
+.orgnr{white-space:nowrap}
+@media (max-width:860px){
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:.5rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--bar-bg,var(--ink));transition:transform .2s ease}
+  .callbar.away{transform:translateY(110%);visibility:hidden}
+  .callbar a{flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:var(--r-btn,4px);font-weight:700;text-decoration:none;text-align:center;line-height:1.15;padding:0 .4rem}
+  .cb-call{background:var(--acc);color:var(--acc-ink)}
+  .cb-req{border:2px solid var(--bar-line,rgba(255,255,255,.7));color:var(--bar-ink,#fff)}
+  .foot{padding-bottom:calc(2rem + 4.75rem + env(safe-area-inset-bottom)) !important}
+}
+@media (max-width:420px){.req-form{padding:1.1rem}}
+
+
+:root{--bg:#f3f5f6;--ink:#18232b;--ink2:#4d5a63;--acc:#a8322a;--acc-ink:#fff;--line:#d3d9dd;--focus:#a8322a;--send:#a8322a;--chip-on:#18232b;--head:'Barlow Condensed',sans-serif;--body:'Barlow',sans-serif;--bar-bg:#18232b;--r-btn:2px}
+.top{background:#18232b;color:#fff}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:60px}
+.brand{font-family:var(--head);font-weight:700;font-size:1.45rem;color:#fff;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;line-height:1}
+.top-call{color:#fff;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;gap:.5rem;white-space:nowrap}
+.top-call b{background:var(--acc);padding:.35rem .6rem}
+.hero{background:#fff}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch;padding:0}
+.hero-text{padding:3.5rem 2.5rem 3rem 1.25rem}
+.hero h1{font-size:clamp(2.8rem,6.6vw,5.2rem);line-height:.92;font-weight:700;letter-spacing:-.01em}
+.hero h1 span{display:block;color:var(--acc)}
+.lede{font-size:1.2rem;color:var(--ink2);max-width:40ch;margin:1.2rem 0 1.6rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn-line{color:var(--ink)}
+.hero-img img{width:100%;height:100%;min-height:420px;object-fit:cover}
+.quick{background:#18232b;color:#e8edf0;padding:2.6rem 0}
+.quick .wrap{display:grid;grid-template-columns:.8fr 2fr;gap:2rem;align-items:start}
+.quick h2{font-size:2rem;color:#fff}
+.quick ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;counter-reset:s}
+.quick li{counter-increment:s;border-top:3px solid var(--acc);padding-top:.8rem}
+.quick li::before{content:"Steg " counter(s);display:block;font-family:var(--head);font-size:1.1rem;color:#fff;margin-bottom:.2rem}
+.svc{padding:4.5rem 0}
+.svc h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:1.5rem}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 3rem}
+.svc-grid div{padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.svc-grid h3{font-family:var(--head);font-size:1.5rem;font-weight:600}
+.svc-grid p{margin:.2rem 0 0;color:var(--ink2)}
+.place{position:relative}
+.place img{width:100%;height:clamp(240px,40vw,460px);object-fit:cover}
+.place p{position:absolute;left:1.25rem;bottom:1.25rem;margin:0;background:#fff;padding:.7rem 1rem;font-family:var(--head);font-size:1.35rem;max-width:calc(100% - 2.5rem)}
+.request{padding:4.5rem 0;background:#fff}
+.req-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:3rem;align-items:start}
+.req-head h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:.6rem}
+.req-head p{color:var(--ink2);max-width:40ch}
+.req-form{background:var(--bg);border:0;border-left:5px solid var(--acc)}
+.contact{padding:3.5rem 0}
+.contact .wrap{display:flex;flex-wrap:wrap;gap:1.5rem 4rem;align-items:baseline}
+.contact h2{font-size:2.2rem;flex-basis:100%}
+.contact p{margin:0}
+.contact span{display:block;color:var(--ink2);font-size:.95rem}
+.contact a{font-weight:700;font-size:1.25rem;display:inline-flex;min-height:44px;align-items:center;overflow-wrap:anywhere}
+.contact strong{font-size:1.25rem}
+.foot{border-top:1px solid var(--line);padding:1.4rem 0 2rem;font-size:.9rem;color:var(--ink2)}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1rem}.foot p{margin:0}
+@media (max-width:860px){
+ .hero .wrap{grid-template-columns:1fr}
+ .hero-text{padding:2.2rem 1.25rem 2rem}
+ .hero-img{order:-1}.hero-img img{min-height:0;height:280px}
+ .quick .wrap,.req-grid{grid-template-columns:1fr;gap:1.4rem}
+ .quick ol{grid-template-columns:1fr}
+ .svc-grid{grid-template-columns:1fr}
+ .top-call span{display:none}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#forespørsel">Gå til skjemaet</a>
+<header class="top"><div class="wrap"><a class="brand" href="#">Installatør Stig Lind</a><a class="top-call" href="tel:+4791750110"><span>Ring</span><b>91 75 01 10</b></a></div></header>
+<main>
+<section class="hero"><div class="wrap">
+  <div class="hero-text">
+    <h1>Elektriker <span>på Myre</span></h1>
+    <p class="lede">Strømmen er borte, en sikring går hele tiden, eller du skal pusse opp? Send oss et bilde av sikringsskapet og en kort beskjed, så vet vi hva vi skal ha med oss.</p>
+    <div class="cta"><a class="btn btn-main" href="#forespørsel">Meld fra om jobben</a><a class="btn btn-line" href="tel:+4791750110">Ring 91 75 01 10</a></div>
+  </div>
+  <div class="hero-img"><img src="hero.jpg" width="1200" height="1275" alt="Elektriker med hjelm og refleksjakke jobber i et åpent elektrisk skap" fetchpriority="high" decoding="async"></div>
+</div></section>
+<section class="quick" aria-labelledby="q-h"><div class="wrap">
+  <h2 id="q-h">Når strømmen går</h2>
+  <ol>
+    <li>Sjekk om naboene også er uten strøm. Da er det trolig nettet, ikke huset ditt.</li>
+    <li>Se i sikringsskapet om en bryter står nede. Slå den opp igjen én gang.</li>
+    <li>Går den igjen, la den stå og send oss et bilde av skapet.</li>
+  </ol>
+</div></section>
+<section class="svc" id="tjenester"><div class="wrap">
+  <h2>Dette gjør vi</h2>
+  <div class="svc-grid">
+    <div><h3>Feilsøking og reparasjon</h3><p>Sikringer som går, jordfeil, lys som blafrer og kurser som ikke virker.</p></div>
+    <div><h3>Sikringsskap</h3><p>Nytt skap eller oppgradering når det gamle ikke lenger holder mål.</p></div>
+    <div><h3>Oppussing og nybygg</h3><p>Komplett el-anlegg når du bygger nytt, eller flere uttak og ny belysning når du pusser opp.</p></div>
+    <div><h3>Bolig, hytte og næring</h3><p>Installasjon og vedlikehold for private, bedrifter og hytteeiere i Øksnes.</p></div>
+    <div><h3>Lading av elbil</h3><p>Lader montert hjemme, koblet riktig til anlegget du har.</p></div>
+    <div><h3>Utstyr og deler</h3><p>Vi selger elektrisk materiell og utstyr, så det meste kan ordnes på ett sted.</p></div>
+  </div>
+</div></section>
+<section class="place" aria-label="Øksnes"><img src="bygd.jpg" width="1800" height="1012" alt="Småbåthavn i snø med fjell i bakgrunnen" loading="lazy" decoding="async"><p>For Myre og resten av Øksnes</p></section>
+<section class="request" id="forespørsel" aria-labelledby="req-h"><div class="wrap req-grid">
+  <div class="req-head">
+    <h2 id="req-h">Meld fra om jobben</h2>
+    <p>Fyll ut det du vet. På mobilen åpnes en ferdig skrevet SMS til oss, og på PC en e-post. Ta et bilde av sikringsskapet og legg det ved før du sender.</p>
+  </div>
+  <form id="req" class="req-form" novalidate>
+      <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="feil" aria-selected="true">Noe er feil</button><button type="button" role="tab" data-tab="jobb" aria-selected="false">Planlagt jobb</button></div><div class="panel" data-panel="feil"><fieldset class="field chips-field" data-name="hva"><legend>Hva har skjedd? <span class="req" aria-hidden="true">*</span></legend><div class="chips"><label class="chip"><input type="radio" name="hva" value="Ingen strøm i huset"><span>Ingen strøm i huset</span></label><label class="chip"><input type="radio" name="hva" value="En sikring går hele tiden"><span>En sikring går hele tiden</span></label><label class="chip"><input type="radio" name="hva" value="Jordfeil"><span>Jordfeil</span></label><label class="chip"><input type="radio" name="hva" value="Brent lukt eller varme"><span>Brent lukt eller varme</span></label><label class="chip"><input type="radio" name="hva" value="Noe annet"><span>Noe annet</span></label></div></fieldset><div class="alert" id="a-brent" role="status" hidden><p>Slå av strømmen på hovedbryteren hvis du kan gjøre det trygt, og ikke rør kontakten eller utstyret. Ser du røyk eller flammer, ring 110. Ring oss på <a href="tel:+4791750110">91 75 01 10</a>.</p></div><fieldset class="field chips-field" data-name="hvor"><legend>Hvor er det?</legend><div class="chips"><label class="chip"><input type="radio" name="hvor" value="Bolig"><span>Bolig</span></label><label class="chip"><input type="radio" name="hvor" value="Hytte"><span>Hytte</span></label><label class="chip"><input type="radio" name="hvor" value="Næringsbygg"><span>Næringsbygg</span></label></div></fieldset><div class="field" data-name="beskrivelse"><label for="feil-beskrivelse">Beskriv kort</label><textarea id="feil-beskrivelse" name="beskrivelse" rows="4" maxlength="800" placeholder="For eksempel: kursen til kjøkkenet går når vi bruker vannkokeren."></textarea></div><div class="field" data-name="navn"><label for="feil-navn">Navn <span class="req" aria-hidden="true">*</span></label><input id="feil-navn" type="text" name="navn" maxlength="60" autocomplete="name" placeholder=""></div><div class="field" data-name="telefon"><label for="feil-telefon">Telefon <span class="req" aria-hidden="true">*</span></label><input id="feil-telefon" type="tel" name="telefon" maxlength="20" autocomplete="tel" inputmode="tel" placeholder=""></div><div class="field" data-name="adresse"><label for="feil-adresse">Adresse <span class="req" aria-hidden="true">*</span></label><input id="feil-adresse" type="text" name="adresse" maxlength="100" autocomplete="street-address" placeholder=""></div></div><div class="panel" data-panel="jobb" hidden><fieldset class="field chips-field" data-name="hva"><legend>Hva skal gjøres? <span class="req" aria-hidden="true">*</span></legend><div class="chips"><label class="chip"><input type="checkbox" name="hva" value="Oppussing"><span>Oppussing</span></label><label class="chip"><input type="checkbox" name="hva" value="Nybygg eller tilbygg"><span>Nybygg eller tilbygg</span></label><label class="chip"><input type="checkbox" name="hva" value="Nytt sikringsskap"><span>Nytt sikringsskap</span></label><label class="chip"><input type="checkbox" name="hva" value="Elbillader"><span>Elbillader</span></label><label class="chip"><input type="checkbox" name="hva" value="Annet"><span>Annet</span></label></div></fieldset><fieldset class="field chips-field" data-name="naar"><legend>Når passer det?</legend><div class="chips"><label class="chip"><input type="radio" name="naar" value="Snart"><span>Snart</span></label><label class="chip"><input type="radio" name="naar" value="Innen et par måneder"><span>Innen et par måneder</span></label><label class="chip"><input type="radio" name="naar" value="Ikke bestemt"><span>Ikke bestemt</span></label></div></fieldset><div class="field" data-name="beskrivelse"><label for="jobb-beskrivelse">Fortell litt om jobben</label><textarea id="jobb-beskrivelse" name="beskrivelse" rows="4" maxlength="800" placeholder="For eksempel: skal pusse opp badet og vil ha varme i gulvet."></textarea></div><div class="field" data-name="navn"><label for="jobb-navn">Navn <span class="req" aria-hidden="true">*</span></label><input id="jobb-navn" type="text" name="navn" maxlength="60" autocomplete="name" placeholder=""></div><div class="field" data-name="telefon"><label for="jobb-telefon">Telefon <span class="req" aria-hidden="true">*</span></label><input id="jobb-telefon" type="tel" name="telefon" maxlength="20" autocomplete="tel" inputmode="tel" placeholder=""></div><div class="field" data-name="adresse"><label for="jobb-adresse">Adresse <span class="req" aria-hidden="true">*</span></label><input id="jobb-adresse" type="text" name="adresse" maxlength="100" autocomplete="street-address" placeholder=""></div></div>
+      <div class="out">
+        <p class="out-h">Slik blir meldingen</p>
+        <pre id="preview" class="preview" aria-live="polite"></pre>
+        <p id="errors" class="errors" role="alert" hidden></p>
+        <div class="send">
+          <a id="send-primary" class="btn btn-send" href="mailto:stig@stiglind.no">Send som e-post</a>
+          <button type="button" id="copy" class="btn btn-ghost">Kopier teksten</button>
+        </div>
+        <p class="send-hint" id="send-hint"></p>
+        <p><a id="send-secondary" class="alt-link" href="#" hidden></a></p>
+        <p id="status" class="status" role="status"></p>
+      </div>
+      <noscript><p class="noscript">Ring oss på 91 75 01 10 eller send e-post til stig@stiglind.no.</p></noscript>
+    </form>
+</div></section>
+<section class="contact" id="kontakt"><div class="wrap">
+  <h2>Kontakt</h2>
+  <p><span>Telefon</span><a href="tel:+4791750110">91 75 01 10</a></p>
+  <p><span>E-post</span><a href="mailto:stig@stiglind.no">stig@stiglind.no</a></p>
+  <p><span>Adresse</span><strong>Rådhusgata 27, 8430 Myre</strong></p>
+</div></section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p class="foot-name">Installatør Stig Lind AS, Rådhusgata 27, 8430 Myre <span class="orgnr">Org.nr. 875 971 832</span></p>
+    <p class="foot-draft">Utkast til nettside laget for Installatør Stig Lind</p>
+  </div>
+</footer>
+<div class="callbar" id="callbar">
+  <a href="tel:+4791750110" class="cb-call">Ring 91 75 01 10</a>
+  <a href="#forespørsel" class="cb-req">Meld fra</a>
+</div>
+<script>window.FORM_CFG = {"email": "stig@stiglind.no", "sms": "+4791750110", "ui": {"sendSms": "Send som SMS", "sendMail": "Send som e-post", "altMail": "Send som e-post i stedet", "altSms": "Send som SMS i stedet", "hintSms": "Meldingsappen åpnes med teksten ferdig skrevet. Legg ved bilde før du trykker send.", "hintMail": "E-postprogrammet ditt åpnes med teksten ferdig skrevet. Legg ved bilde før du sender.", "missing": "Fyll ut", "opened": "Meldingen er klar. Sjekk at alt stemmer, og trykk send i appen.", "copied": "Teksten er kopiert. Lim den inn i en SMS eller e-post.", "copyFail": "Teksten er markert. Kopier den med Ctrl+C eller ved å holde fingeren på den."}, "panels": [{"id": "feil", "heading": "Melding til Stig Lind – feil på strømmen", "subject": "Feil på strømmen: {hva}", "footer": null, "fields": [{"name": "hva", "type": "chips", "required": true, "msgLabel": "Problem", "yes": null, "upper": null}, {"name": "hvor", "type": "chips", "required": false, "msgLabel": "Sted", "yes": null, "upper": null}, {"name": "beskrivelse", "type": "textarea", "required": false, "msgLabel": "Beskrivelse", "yes": null, "upper": null}, {"name": "navn", "type": "text", "required": true, "msgLabel": "Navn", "yes": null, "upper": null}, {"name": "telefon", "type": "text", "required": true, "msgLabel": "Telefon", "yes": null, "upper": null}, {"name": "adresse", "type": "text", "required": true, "msgLabel": "Adresse", "yes": null, "upper": null}], "alerts": [{"id": "a-brent", "field": "hva", "values": ["Brent lukt eller varme"]}]}, {"id": "jobb", "heading": "Forespørsel til Stig Lind – planlagt jobb", "subject": "Forespørsel: {hva}", "footer": null, "fields": [{"name": "hva", "type": "chips", "required": true, "msgLabel": "Jobb", "yes": null, "upper": null}, {"name": "naar", "type": "chips", "required": false, "msgLabel": "Når", "yes": null, "upper": null}, {"name": "beskrivelse", "type": "textarea", "required": false, "msgLabel": "Beskrivelse", "yes": null, "upper": null}, {"name": "navn", "type": "text", "required": true, "msgLabel": "Navn", "yes": null, "upper": null}, {"name": "telefon", "type": "text", "required": true, "msgLabel": "Telefon", "yes": null, "upper": null}, {"name": "adresse", "type": "text", "required": true, "msgLabel": "Adresse", "yes": null, "upper": null}], "alerts": []}]};</script>
+<script>
+(function(){
+  var C = window.FORM_CFG, T = C.ui;
+  var ua = navigator.userAgent || "";
+  var mobile = /Android|iPhone|iPad|iPod/i.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua));
+  var form = document.getElementById("req");
+  var tabs = form.querySelectorAll("[data-tab]");
+  var panels = form.querySelectorAll("[data-panel]");
+  var current = panels.length ? panels[0].getAttribute("data-panel") : null;
+  var preview = document.getElementById("preview");
+  var primary = document.getElementById("send-primary");
+  var secondary = document.getElementById("send-secondary");
+  var copyBtn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  var errBox = document.getElementById("errors");
+
+  function activePanel(){ return current ? form.querySelector('[data-panel="'+current+'"]') : form; }
+  function panelCfg(){ for (var i=0;i<C.panels.length;i++){ if(C.panels[i].id===current) return C.panels[i]; } return C.panels[0]; }
+
+  function val(f, scope){
+    if (f.type === "chips"){
+      var out = [];
+      scope.querySelectorAll('input[name="'+f.name+'"]:checked').forEach(function(i){ out.push(i.value); });
+      return out.join(", ");
+    }
+    if (f.type === "check"){
+      var c = scope.querySelector('input[name="'+f.name+'"]');
+      return c && c.checked ? f.yes : "";
+    }
+    var el = scope.querySelector('[name="'+f.name+'"]');
+    var v = el ? el.value.replace(/\s+$/,"").replace(/^\s+/,"") : "";
+    return f.upper ? v.toUpperCase() : v;
+  }
+
+  function compose(){
+    var p = panelCfg(), scope = activePanel(), lines = [p.heading, ""];
+    p.fields.forEach(function(f){
+      var v = val(f, scope);
+      if (!v) return;
+      if (f.type === "textarea"){ lines.push(""); lines.push(f.msgLabel + ":"); lines.push(v); lines.push(""); }
+      else if (f.type === "check"){ lines.push(v); }
+      else { lines.push(f.msgLabel + ": " + v); }
+    });
+    if (p.footer){ lines.push(""); lines.push(p.footer); }
+    return lines.join("\n").replace(/\n{3,}/g, "\n\n").replace(/\n+$/,"");
+  }
+
+  function missing(){
+    var p = panelCfg(), scope = activePanel(), miss = [];
+    p.fields.forEach(function(f){ if (f.required && !val(f, scope)) miss.push(f); });
+    return miss;
+  }
+
+  function hrefs(text){
+    var p = panelCfg();
+    var subj = p.subject.replace(/\{(\w+)\}/g, function(m, n){ var f=null; p.fields.forEach(function(x){ if(x.name===n) f=x; }); return f ? val(f, activePanel()) : ""; }).replace(/[\s,–-]+$/, "");
+    var mail = "mailto:" + C.email + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(text);
+    var sms = C.sms ? "sms:" + C.sms + "?&body=" + encodeURIComponent(text) : null;
+    return {mail: mail, sms: sms};
+  }
+
+  function update(){
+    var text = compose();
+    preview.textContent = text;
+    var h = hrefs(text);
+    var useSms = mobile && h.sms;
+    primary.href = useSms ? h.sms : h.mail;
+    primary.textContent = useSms ? T.sendSms : T.sendMail;
+    if (secondary){
+      if (h.sms){
+        secondary.hidden = false;
+        secondary.href = useSms ? h.mail : h.sms;
+        secondary.textContent = useSms ? T.altMail : T.altSms;
+      } else { secondary.hidden = true; }
+    }
+    var hint = document.getElementById("send-hint");
+    if (hint) hint.textContent = useSms ? T.hintSms : T.hintMail;
+    // conditional alerts
+    var p = panelCfg(), scope = activePanel();
+    (p.alerts || []).forEach(function(a){
+      var box = document.getElementById(a.id);
+      var f = null; p.fields.forEach(function(x){ if (x.name === a.field) f = x; });
+      var v = f ? val(f, scope) : "";
+      var on = (f && f.type === "check") ? !!v : a.values.some(function(x){ return v.split(", ").indexOf(x) > -1; });
+      box.hidden = !on;
+    });
+    form.querySelectorAll(".field.invalid").forEach(function(el){
+      var n = el.getAttribute("data-name"); var f=null; p.fields.forEach(function(x){ if(x.name===n) f=x; });
+      if (f && val(f, scope)) el.classList.remove("invalid");
+    });
+    if (errBox && !errBox.hidden && missing().length === 0) errBox.hidden = true;
+  }
+
+  function guard(e){
+    var miss = missing();
+    if (miss.length){
+      e.preventDefault();
+      var scope = activePanel();
+      miss.forEach(function(f){ var el = scope.querySelector('.field[data-name="'+f.name+'"]'); if (el) el.classList.add("invalid"); });
+      errBox.textContent = T.missing + " " + miss.map(function(f){ return f.msgLabel.toLowerCase(); }).join(", ") + ".";
+      errBox.hidden = false;
+      var first = scope.querySelector('.field[data-name="'+miss[0].name+'"] input, .field[data-name="'+miss[0].name+'"] textarea');
+      if (first) first.focus();
+      return false;
+    }
+    status.textContent = T.opened;
+  }
+
+  primary.addEventListener("click", guard);
+  if (secondary) secondary.addEventListener("click", guard);
+  copyBtn.addEventListener("click", function(){
+    var text = compose();
+    function ok(){ status.textContent = T.copied; }
+    function fail(){
+      var r = document.createRange(); r.selectNodeContents(preview);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      status.textContent = T.copyFail;
+    }
+    if (navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(text).then(ok, fail); } else { fail(); }
+  });
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+  form.addEventListener("submit", function(e){ e.preventDefault(); });
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){
+      current = t.getAttribute("data-tab");
+      tabs.forEach(function(x){ x.setAttribute("aria-selected", x===t ? "true" : "false"); });
+      panels.forEach(function(p){ p.hidden = p.getAttribute("data-panel") !== current; });
+      if (errBox) errBox.hidden = true;
+      update();
+    });
+  });
+  update();
+
+  // mobile call bar: hide while the form is on screen
+  var bar = document.getElementById("callbar");
+  if (bar && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ bar.classList.toggle("away", en.isIntersecting); });
+    }, {threshold: 0.05});
+    io.observe(document.getElementById("forespørsel") || form);
+  }
+})();
+
+</script>
+</body>
+</html>

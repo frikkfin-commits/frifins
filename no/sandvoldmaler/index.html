@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sandvold Malerservice – maler i Melhus</title>
+<meta name="description" content="Maler i Melhus. Innvendig og utvendig maling, tapetsering og gulv. Få pris på jobben eller ring 95 03 64 99.">
+<meta name="theme-color" content="#1e2b26">
+<link rel="icon" href="data:,">
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bricolage-grotesque-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/figtree-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/figtree-latin-700-normal.woff2) format('woff2');}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;scroll-padding-bottom:5rem;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);margin:0;font-weight:var(--hw,700)}
+p{margin:0 0 1rem}
+.wrap{max-width:1160px;margin:0 auto;padding:0 1.25rem}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:99}
+.skip:focus{left:.5rem;top:.5rem}
+:focus-visible{outline:3px solid var(--focus,var(--acc));outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.25rem;border-radius:var(--r-btn,4px);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;text-align:center;line-height:1.2}
+.btn-main{background:var(--acc);color:var(--acc-ink)}
+.btn-line{border-color:currentColor;color:inherit;background:transparent}
+.btn-send{background:var(--send,var(--ink));color:var(--send-ink,#fff)}
+.btn-ghost{background:transparent;border-color:var(--line-strong,var(--ink));color:var(--ink)}
+.req-form{background:var(--form-bg,#fff);color:var(--ink);padding:1.5rem;border-radius:var(--r-box,4px);border:1px solid var(--line)}
+.field{border:0;margin:0 0 1.15rem;padding:0;min-width:0}
+.field>label,.field legend{display:block;font-weight:700;margin-bottom:.4rem;padding:0}
+.hint{display:block;font-size:.92rem;color:var(--ink2);margin:-.2rem 0 .45rem}
+.req{color:#b42318}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;font:inherit;padding:.7rem .8rem;border:1.5px solid var(--field-line,#8d979f);border-radius:var(--r-field,4px);background:#fff;color:#1b1f22;min-height:48px}
+textarea{resize:vertical;min-height:110px}
+.field.invalid input,.field.invalid textarea{border-color:#b42318;background:#fff5f4}
+.field.invalid legend,.field.invalid>label{color:#b42318}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer;width:100%;height:100%}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:.5rem .9rem;border:1.5px solid var(--field-line,#8d979f);border-radius:var(--r-chip,4px);background:#fff;color:#1b1f22;cursor:pointer;line-height:1.2}
+.chip input:checked+span{background:var(--chip-on,var(--ink));border-color:var(--chip-on,var(--ink));color:var(--chip-on-ink,#fff)}
+.chip input:focus-visible+span{outline:3px solid var(--focus,var(--acc));outline-offset:2px}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-weight:700;cursor:pointer}
+.check input{width:22px;height:22px;margin-top:.1rem;flex:none}
+.alert{margin:-.3rem 0 1.2rem;padding:.9rem 1rem;border-radius:4px;background:#fff4d6;border:1.5px solid #c98d00;color:#3d2b00}
+.alert p{margin:0}
+.alert a{font-weight:700;white-space:nowrap}
+.tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem;border-bottom:2px solid var(--line)}
+.tabs button{font:inherit;font-weight:700;padding:.7rem 1rem;min-height:48px;border:0;background:transparent;color:var(--ink2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--acc-strong,var(--acc))}
+.panel-intro{color:var(--ink2)}
+.out{margin-top:1.5rem;border-top:1px solid var(--line);padding-top:1.25rem}
+.out-h{font-weight:700;margin-bottom:.5rem}
+.preview{white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;font-family:var(--body);font-size:.95rem;background:var(--pre-bg,#f2f4f5);color:#1b1f22;padding:1rem;border-radius:4px;margin:0 0 1rem;max-height:340px;overflow:auto}
+.errors{color:#b42318;font-weight:700}
+.send{display:flex;flex-wrap:wrap;gap:.6rem}
+.send .btn{flex:1 1 200px}
+.send-hint{font-size:.92rem;color:var(--ink2);margin:.75rem 0 .25rem}
+.alt-link{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
+.status{font-weight:700;min-height:1.2em;margin:0}
+.noscript{padding:1rem;background:#fff4d6}
+.callbar{display:none}
+.orgnr{white-space:nowrap}
+@media (max-width:860px){
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:.5rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--bar-bg,var(--ink));transition:transform .2s ease}
+  .callbar.away{transform:translateY(110%);visibility:hidden}
+  .callbar a{flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:var(--r-btn,4px);font-weight:700;text-decoration:none;text-align:center;line-height:1.15;padding:0 .4rem}
+  .cb-call{background:var(--acc);color:var(--acc-ink)}
+  .cb-req{border:2px solid var(--bar-line,rgba(255,255,255,.7));color:var(--bar-ink,#fff)}
+  .foot{padding-bottom:calc(2rem + 4.75rem + env(safe-area-inset-bottom)) !important}
+}
+@media (max-width:420px){.req-form{padding:1.1rem}}
+
+
+:root{--bg:#ffffff;--ink:#1e2b26;--ink2:#52605a;--acc:#2c5f55;--acc-ink:#fff;--line:#dfe5e2;--focus:#2c5f55;--send:#2c5f55;--chip-on:#2c5f55;--head:'Bricolage Grotesque',sans-serif;--body:'Figtree',sans-serif;--bar-bg:#1e2b26;--r-btn:8px;--r-chip:8px;--r-box:12px}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:68px}
+.brand{font-family:var(--head);font-weight:700;font-size:1.35rem;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.top-call{font-weight:700;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;padding:0 1rem;border:2px solid var(--ink);border-radius:8px;white-space:nowrap}
+.swatch{display:flex;height:14px}
+.swatch i{flex:1}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding-top:3rem;padding-bottom:4rem}
+.hero h1{font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:.95;font-weight:700;letter-spacing:-.03em}
+.lede{font-size:1.2rem;color:var(--ink2);margin:1.3rem 0 1.7rem;max-width:40ch}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn-line{color:var(--ink)}
+.hero-img img{width:100%;height:clamp(320px,44vw,560px);object-fit:cover;border-radius:12px}
+.work{background:#f1f4f2;padding:4.5rem 0}
+.work h2{font-family:var(--head);font-size:clamp(2rem,4vw,3rem);letter-spacing:-.02em;margin-bottom:2rem;max-width:20ch;line-height:1.02}
+.rows{display:grid;gap:0}
+.row{display:grid;grid-template-columns:3.2rem 14rem 1fr;gap:1.5rem;align-items:baseline;padding:1.2rem 0;border-top:1px solid #cfd8d4}
+.row i{display:block;width:2.6rem;height:2.6rem;border-radius:50%;align-self:center}
+.row h3{font-size:1.35rem}
+.row p{margin:0;color:var(--ink2);max-width:52ch}
+.request{padding:4.5rem 0}
+.req-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:3rem;align-items:start}
+.req-head h2{font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-.02em;line-height:1.02;margin-bottom:.8rem}
+.req-head p{color:var(--ink2);max-width:42ch}
+.req-form{border:1px solid var(--line)}
+.contact{background:#1e2b26;color:#e3ebe7;padding:3.5rem 0}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.contact h2{font-size:2.2rem;color:#fff;letter-spacing:-.02em}
+.contact p{margin:0 0 .6rem}
+.contact span{display:inline-block;width:6rem;color:#a9bab3}
+.contact a{color:#fff;font-weight:700;display:inline-flex;min-height:44px;align-items:center;overflow-wrap:anywhere}
+.foot{background:#1e2b26;color:#a9bab3;padding:0 0 2rem;font-size:.9rem}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1rem;border-top:1px solid #3a4a44;padding-top:1.3rem}.foot p{margin:0}
+@media (max-width:860px){
+ .hero .wrap{grid-template-columns:1fr;gap:1.6rem;padding-top:1.8rem;padding-bottom:2.6rem}
+ .hero-img{order:-1}.hero-img img{height:270px}
+ .row{grid-template-columns:2.6rem 1fr;gap:.2rem 1rem}
+ .row p{grid-column:2}
+ .req-grid,.contact .wrap{grid-template-columns:1fr;gap:1.5rem}
+ .top-call{padding:0 .7rem}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#forespørsel">Gå til prisskjemaet</a>
+<div class="swatch" aria-hidden="true"><i style="background:#e6dccb"></i><i style="background:#a9bcb1"></i><i style="background:#3f5f6c"></i><i style="background:#c8a24f"></i><i style="background:#7c5160"></i><i style="background:#2c5f55"></i></div>
+<header class="top"><div class="wrap"><a class="brand" href="#">Sandvold Malerservice</a><a class="top-call" href="tel:+4795036499">95 03 64 99</a></div></header>
+<main>
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Maler i Melhus</h1>
+    <p class="lede">Maling, tapet og gulv, inne og ute. Fortell oss hvilke rom det gjelder og omtrent hvor stort det er, så har vi det vi trenger for å gi deg en pris.</p>
+    <div class="cta"><a class="btn btn-main" href="#forespørsel">Få pris på jobben</a><a class="btn btn-line" href="tel:+4795036499">Ring 95 03 64 99</a></div>
+  </div>
+  <div class="hero-img"><img src="hero.jpg" width="1100" height="1386" alt="Maler i hvite arbeidsklær ruller maling i taket i et lyst rom" fetchpriority="high" decoding="async"></div>
+</div></section>
+<section class="work" id="tjenester"><div class="wrap">
+  <h2>Fra sparkel til siste strøk</h2>
+  <div class="rows">
+    <div class="row"><i style="background:#e6dccb"></i><h3>Innvendig maling</h3><p>Vegger, tak, lister og dører. Vi dekker til, sparkler, sliper og maler, og rydder etter oss.</p></div>
+    <div class="row"><i style="background:#3f5f6c"></i><h3>Utvendig maling</h3><p>Fasade, vinduer og vindskier. Riktig forarbeid gjør at malingen holder flere år lenger.</p></div>
+    <div class="row"><i style="background:#7c5160"></i><h3>Tapetsering</h3><p>Fra en enkelt fondvegg til hele stuen, også mønstertapet som må passes nøye.</p></div>
+    <div class="row"><i style="background:#c8a24f"></i><h3>Gulv</h3><p>Nytt gulv når rommet uansett skal pusses opp, så alt blir ferdig på én gang.</p></div>
+  </div>
+</div></section>
+<section class="request" id="forespørsel" aria-labelledby="req-h"><div class="wrap req-grid">
+  <div class="req-head"><h2 id="req-h">Få pris på jobben</h2><p>Kryss av for det som skal gjøres. På mobilen åpnes en ferdig skrevet SMS til oss, og på PC en e-post. Legg gjerne ved et par bilder av rommet eller veggen.</p></div>
+  <form id="req" class="req-form" novalidate>
+      <div class="panel" data-panel="p1"><fieldset class="field chips-field" data-name="hva"><legend>Hva skal gjøres? <span class="req" aria-hidden="true">*</span></legend><div class="chips"><label class="chip"><input type="checkbox" name="hva" value="Male innvendig"><span>Male innvendig</span></label><label class="chip"><input type="checkbox" name="hva" value="Male utvendig"><span>Male utvendig</span></label><label class="chip"><input type="checkbox" name="hva" value="Tapetsere"><span>Tapetsere</span></label><label class="chip"><input type="checkbox" name="hva" value="Gulv"><span>Gulv</span></label></div></fieldset><fieldset class="field chips-field" data-name="rom"><legend>Hvilke rom eller flater?</legend><div class="chips"><label class="chip"><input type="checkbox" name="rom" value="Stue"><span>Stue</span></label><label class="chip"><input type="checkbox" name="rom" value="Kjøkken"><span>Kjøkken</span></label><label class="chip"><input type="checkbox" name="rom" value="Soverom"><span>Soverom</span></label><label class="chip"><input type="checkbox" name="rom" value="Gang og trapp"><span>Gang og trapp</span></label><label class="chip"><input type="checkbox" name="rom" value="Bad"><span>Bad</span></label><label class="chip"><input type="checkbox" name="rom" value="Hele boligen"><span>Hele boligen</span></label><label class="chip"><input type="checkbox" name="rom" value="Fasade"><span>Fasade</span></label><label class="chip"><input type="checkbox" name="rom" value="Vinduer"><span>Vinduer</span></label></div></fieldset><div class="field" data-name="storrelse"><label for="p1-storrelse">Omtrent hvor stort?</label><input id="p1-storrelse" type="text" name="storrelse" maxlength="100" placeholder="For eksempel: stue på 35 m²"></div><fieldset class="field chips-field" data-name="naar"><legend>Når ønsker du det gjort?</legend><div class="chips"><label class="chip"><input type="radio" name="naar" value="Så snart som mulig"><span>Så snart som mulig</span></label><label class="chip"><input type="radio" name="naar" value="Før jul"><span>Før jul</span></label><label class="chip"><input type="radio" name="naar" value="Til våren"><span>Til våren</span></label><label class="chip"><input type="radio" name="naar" value="Ikke bestemt"><span>Ikke bestemt</span></label></div></fieldset><div class="field" data-name="beskrivelse"><label for="p1-beskrivelse">Noe mer vi bør vite?</label><textarea id="p1-beskrivelse" name="beskrivelse" rows="4" maxlength="800" placeholder="For eksempel: fuktflekker i taket, eller farge er allerede valgt."></textarea></div><div class="field" data-name="navn"><label for="p1-navn">Navn <span class="req" aria-hidden="true">*</span></label><input id="p1-navn" type="text" name="navn" maxlength="60" autocomplete="name" placeholder=""></div><div class="field" data-name="telefon"><label for="p1-telefon">Telefon <span class="req" aria-hidden="true">*</span></label><input id="p1-telefon" type="tel" name="telefon" maxlength="20" autocomplete="tel" inputmode="tel" placeholder=""></div><div class="field" data-name="adresse"><label for="p1-adresse">Adresse <span class="req" aria-hidden="true">*</span></label><input id="p1-adresse" type="text" name="adresse" maxlength="100" autocomplete="street-address" placeholder=""></div></div>
+      <div class="out">
+        <p class="out-h">Slik blir meldingen</p>
+        <pre id="preview" class="preview" aria-live="polite"></pre>
+        <p id="errors" class="errors" role="alert" hidden></p>
+        <div class="send">
+          <a id="send-primary" class="btn btn-send" href="mailto:toms@sandmal.no">Send som e-post</a>
+          <button type="button" id="copy" class="btn btn-ghost">Kopier teksten</button>
+        </div>
+        <p class="send-hint" id="send-hint"></p>
+        <p><a id="send-secondary" class="alt-link" href="#" hidden></a></p>
+        <p id="status" class="status" role="status"></p>
+      </div>
+      <noscript><p class="noscript">Ring oss på 95 03 64 99 eller send e-post til toms@sandmal.no.</p></noscript>
+    </form>
+</div></section>
+<section class="contact" id="kontakt"><div class="wrap">
+  <h2>Kontakt</h2>
+  <div><p><span>Telefon</span><a href="tel:+4795036499">95 03 64 99</a></p><p><span>E-post</span><a href="mailto:toms@sandmal.no">toms@sandmal.no</a></p><p><span>Adresse</span>Melhustunet 44, 7224 Melhus</p></div>
+</div></section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p class="foot-name">Sandvold Malerservice AS, Melhustunet 44, 7224 Melhus <span class="orgnr">Org.nr. 897 830 442</span></p>
+    <p class="foot-draft">Utkast til nettside laget for Sandvold Malerservice</p>
+  </div>
+</footer>
+<div class="callbar" id="callbar">
+  <a href="tel:+4795036499" class="cb-call">Ring 95 03 64 99</a>
+  <a href="#forespørsel" class="cb-req">Få pris</a>
+</div>
+<script>window.FORM_CFG = {"email": "toms@sandmal.no", "sms": "+4795036499", "ui": {"sendSms": "Send som SMS", "sendMail": "Send som e-post", "altMail": "Send som e-post i stedet", "altSms": "Send som SMS i stedet", "hintSms": "Meldingsappen åpnes med teksten ferdig skrevet. Legg ved bilde før du trykker send.", "hintMail": "E-postprogrammet ditt åpnes med teksten ferdig skrevet. Legg ved bilde før du sender.", "missing": "Fyll ut", "opened": "Meldingen er klar. Sjekk at alt stemmer, og trykk send i appen.", "copied": "Teksten er kopiert. Lim den inn i en SMS eller e-post.", "copyFail": "Teksten er markert. Kopier den med Ctrl+C eller ved å holde fingeren på den."}, "panels": [{"id": "p1", "heading": "Prisforespørsel til Sandvold Malerservice", "subject": "Prisforespørsel: {hva}", "footer": null, "fields": [{"name": "hva", "type": "chips", "required": true, "msgLabel": "Jobb", "yes": null, "upper": null}, {"name": "rom", "type": "chips", "required": false, "msgLabel": "Rom og flater", "yes": null, "upper": null}, {"name": "storrelse", "type": "text", "required": false, "msgLabel": "Størrelse", "yes": null, "upper": false}, {"name": "naar", "type": "chips", "required": false, "msgLabel": "Når", "yes": null, "upper": null}, {"name": "beskrivelse", "type": "textarea", "required": false, "msgLabel": "Beskrivelse", "yes": null, "upper": null}, {"name": "navn", "type": "text", "required": true, "msgLabel": "Navn", "yes": null, "upper": null}, {"name": "telefon", "type": "text", "required": true, "msgLabel": "Telefon", "yes": null, "upper": null}, {"name": "adresse", "type": "text", "required": true, "msgLabel": "Adresse", "yes": null, "upper": null}], "alerts": []}]};</script>
+<script>
+(function(){
+  var C = window.FORM_CFG, T = C.ui;
+  var ua = navigator.userAgent || "";
+  var mobile = /Android|iPhone|iPad|iPod/i.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua));
+  var form = document.getElementById("req");
+  var tabs = form.querySelectorAll("[data-tab]");
+  var panels = form.querySelectorAll("[data-panel]");
+  var current = panels.length ? panels[0].getAttribute("data-panel") : null;
+  var preview = document.getElementById("preview");
+  var primary = document.getElementById("send-primary");
+  var secondary = document.getElementById("send-secondary");
+  var copyBtn = document.getElementById("copy");
+  var status = document.getElementById("status");
+  var errBox = document.getElementById("errors");
+
+  function activePanel(){ return current ? form.querySelector('[data-panel="'+current+'"]') : form; }
+  function panelCfg(){ for (var i=0;i<C.panels.length;i++){ if(C.panels[i].id===current) return C.panels[i]; } return C.panels[0]; }
+
+  function val(f, scope){
+    if (f.type === "chips"){
+      var out = [];
+      scope.querySelectorAll('input[name="'+f.name+'"]:checked').forEach(function(i){ out.push(i.value); });
+      return out.join(", ");
+    }
+    if (f.type === "check"){
+      var c = scope.querySelector('input[name="'+f.name+'"]');
+      return c && c.checked ? f.yes : "";
+    }
+    var el = scope.querySelector('[name="'+f.name+'"]');
+    var v = el ? el.value.replace(/\s+$/,"").replace(/^\s+/,"") : "";
+    return f.upper ? v.toUpperCase() : v;
+  }
+
+  function compose(){
+    var p = panelCfg(), scope = activePanel(), lines = [p.heading, ""];
+    p.fields.forEach(function(f){
+      var v = val(f, scope);
+      if (!v) return;
+      if (f.type === "textarea"){ lines.push(""); lines.push(f.msgLabel + ":"); lines.push(v); lines.push(""); }
+      else if (f.type === "check"){ lines.push(v); }
+      else { lines.push(f.msgLabel + ": " + v); }
+    });
+    if (p.footer){ lines.push(""); lines.push(p.footer); }
+    return lines.join("\n").replace(/\n{3,}/g, "\n\n").replace(/\n+$/,"");
+  }
+
+  function missing(){
+    var p = panelCfg(), scope = activePanel(), miss = [];
+    p.fields.forEach(function(f){ if (f.required && !val(f, scope)) miss.push(f); });
+    return miss;
+  }
+
+  function hrefs(text){
+    var p = panelCfg();
+    var subj = p.subject.replace(/\{(\w+)\}/g, function(m, n){ var f=null; p.fields.forEach(function(x){ if(x.name===n) f=x; }); return f ? val(f, activePanel()) : ""; }).replace(/[\s,–-]+$/, "");
+    var mail = "mailto:" + C.email + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(text);
+    var sms = C.sms ? "sms:" + C.sms + "?&body=" + encodeURIComponent(text) : null;
+    return {mail: mail, sms: sms};
+  }
+
+  function update(){
+    var text = compose();
+    preview.textContent = text;
+    var h = hrefs(text);
+    var useSms = mobile && h.sms;
+    primary.href = useSms ? h.sms : h.mail;
+    primary.textContent = useSms ? T.sendSms : T.sendMail;
+    if (secondary){
+      if (h.sms){
+        secondary.hidden = false;
+        secondary.href = useSms ? h.mail : h.sms;
+        secondary.textContent = useSms ? T.altMail : T.altSms;
+      } else { secondary.hidden = true; }
+    }
+    var hint = document.getElementById("send-hint");
+    if (hint) hint.textContent = useSms ? T.hintSms : T.hintMail;
+    // conditional alerts
+    var p = panelCfg(), scope = activePanel();
+    (p.alerts || []).forEach(function(a){
+      var box = document.getElementById(a.id);
+      var f = null; p.fields.forEach(function(x){ if (x.name === a.field) f = x; });
+      var v = f ? val(f, scope) : "";
+      var on = (f && f.type === "check") ? !!v : a.values.some(function(x){ return v.split(", ").indexOf(x) > -1; });
+      box.hidden = !on;
+    });
+    form.querySelectorAll(".field.invalid").forEach(function(el){
+      var n = el.getAttribute("data-name"); var f=null; p.fields.forEach(function(x){ if(x.name===n) f=x; });
+      if (f && val(f, scope)) el.classList.remove("invalid");
+    });
+    if (errBox && !errBox.hidden && missing().length === 0) errBox.hidden = true;
+  }
+
+  function guard(e){
+    var miss = missing();
+    if (miss.length){
+      e.preventDefault();
+      var scope = activePanel();
+      miss.forEach(function(f){ var el = scope.querySelector('.field[data-name="'+f.name+'"]'); if (el) el.classList.add("invalid"); });
+      errBox.textContent = T.missing + " " + miss.map(function(f){ return f.msgLabel.toLowerCase(); }).join(", ") + ".";
+      errBox.hidden = false;
+      var first = scope.querySelector('.field[data-name="'+miss[0].name+'"] input, .field[data-name="'+miss[0].name+'"] textarea');
+      if (first) first.focus();
+      return false;
+    }
+    status.textContent = T.opened;
+  }
+
+  primary.addEventListener("click", guard);
+  if (secondary) secondary.addEventListener("click", guard);
+  copyBtn.addEventListener("click", function(){
+    var text = compose();
+    function ok(){ status.textContent = T.copied; }
+    function fail(){
+      var r = document.createRange(); r.selectNodeContents(preview);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      status.textContent = T.copyFail;
+    }
+    if (navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(text).then(ok, fail); } else { fail(); }
+  });
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+  form.addEventListener("submit", function(e){ e.preventDefault(); });
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){
+      current = t.getAttribute("data-tab");
+      tabs.forEach(function(x){ x.setAttribute("aria-selected", x===t ? "true" : "false"); });
+      panels.forEach(function(p){ p.hidden = p.getAttribute("data-panel") !== current; });
+      if (errBox) errBox.hidden = true;
+      update();
+    });
+  });
+  update();
+
+  // mobile call bar: hide while the form is on screen
+  var bar = document.getElementById("callbar");
+  if (bar && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ bar.classList.toggle("away", en.isIntersecting); });
+    }, {threshold: 0.05});
+    io.observe(document.getElementById("forespørsel") || form);
+  }
+})();
+
+</script>
+</body>
+</html>
